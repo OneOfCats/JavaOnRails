@@ -1,0 +1,14 @@
+{
+	"projects": [
+		{	
+			"title": "Project title 1",
+			"firstName": "Vladick",
+			"lastName": "Raikhberh"
+		},
+		{
+			"title": "Project title 2",
+			"firstName":"Sanek",
+			"lastName":"Tischenko"
+		}
+	]
+}
