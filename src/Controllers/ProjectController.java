@@ -12,7 +12,6 @@ public class ProjectController extends Controller {
 	}
 	
 	public String index() {
-		Object data = getModelData();
-		return this.response = generateView("");
+		return this.response = getGeneratedView();
 	}
 }

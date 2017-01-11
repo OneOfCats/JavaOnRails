@@ -11,6 +11,8 @@ public class Controller {
 	protected String response;
 	protected String headers;
 	protected Object model;
+	protected Object view;
+	protected Object modelData;
 	
 	/**
 	 * Controller constructor
@@ -27,6 +29,12 @@ public class Controller {
 			modelClass = Class.forName("Models." + getControllerName() + "Model");
 			Constructor modelConstructor = modelClass.getConstructor();
 			this.model = modelConstructor.newInstance();
+			this.modelData = getModelData();
+			
+			Class viewClass;
+			viewClass = Class.forName("Views." + getControllerName() + "View");
+			Constructor viewConstructor = viewClass.getConstructor(Object.class, String.class);
+			this.view = viewConstructor.newInstance(new Object[] { this.modelData, this.currentAction });
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -57,17 +65,6 @@ public class Controller {
 	}
 	
 	/**
-	 * This method reads a file
-	 * @param path path to a file
-	 * @param encoding encoding of a file
-	 * @return String string with a content from a file
-	 */
-	public String readFile(String path, Charset encoding) throws IOException {
-		byte[] encoded = Files.readAllBytes(Paths.get(path));
-		return new String(encoded, encoding);
-	}
-	
-	/**
 	 * This method returns a controller name
 	 * @return String controller name
 	 */
@@ -76,20 +73,15 @@ public class Controller {
 		return className.replaceAll("Controller$", "");
 	}
 	
-	/**
-	 * This method generates a view, attaching a content and the base layout
-	 * @param contents content for a view
-	 * @return String generated view
-	 */
-	public String generateView(String contents) {
+	protected String getGeneratedView() {
 		try {
-			String layout = readFile("src/Views/" + "layout" + ".html", Charset.forName("UTF-8"));
-			String file = readFile("src/Views/" + getControllerName() + "/" + this.currentAction + ".html", Charset.forName("UTF-8"));
-			String page = layout.replaceAll("<java-content>", file);
+			Method getGeneratedViewMethod = this.view.getClass().getMethod("getGeneratedView");
+			String page = (String) getGeneratedViewMethod.invoke(this.model);
 			return page;
-		} catch (IOException e) {
-    		System.out.println(e);
-    	}
+		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "";
 	}
 }
