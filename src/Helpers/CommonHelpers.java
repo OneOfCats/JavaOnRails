@@ -13,8 +13,7 @@ public class CommonHelpers {
 	 */
 	public static Object invokeMethod(String methodName, Object target) {
 		try {
-			Method getModelContents;
-			getModelContents = target.getClass().getMethod(methodName);
+			 Method getModelContents = target.getClass().getMethod(methodName);
 			Object data = (Object) getModelContents.invoke(target);
 			return data;
 		} catch (SecurityException | NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {

@@ -56,10 +56,9 @@ public class Controller {
 	
 	protected Object getModelData() {
 		try {
-			Method getData = this.model.getClass().getMethod("getData");
-			Object data = (Object) getData.invoke(this.model);
+			Object data = (Object) CommonHelpers.invokeMethod("getData", this.model);
 			return data;
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+		} catch (SecurityException | IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -78,10 +77,8 @@ public class Controller {
 	
 	protected void addModelContents(String content) {
 		try {
-			Method getModelContents;
-			getModelContents = this.model.getClass().getMethod("getModelContents");
-			Object data = (Object) getModelContents.invoke(this.model);
-		} catch (SecurityException | NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+			Object data = (Object) CommonHelpers.invokeMethod("getModelContents", this.model);
+		} catch (SecurityException | IllegalArgumentException e) {
         	System.out.println(e);
         }
 	}
@@ -97,10 +94,9 @@ public class Controller {
 	
 	protected String getGeneratedView() {
 		try {
-			Method getGeneratedViewMethod = this.view.getClass().getMethod("getGeneratedView");
-			String page = (String) getGeneratedViewMethod.invoke(this.view);
+			String page = (String) CommonHelpers.invokeMethod("getGeneratedView", this.view);
 			return page;
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+		} catch (SecurityException | IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
