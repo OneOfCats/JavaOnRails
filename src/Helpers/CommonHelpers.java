@@ -1,5 +1,6 @@
 package Helpers;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -19,6 +20,28 @@ public class CommonHelpers {
 		} catch (SecurityException | NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
         	System.out.println(e);
         }
+		return null;
+	}
+	
+	public static Object createClassInstance(String className) {
+		try {
+			Class requestedClass = Class.forName(className);
+			Constructor requestedConstructor = requestedClass.getConstructor();
+			return requestedConstructor.newInstance();
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static Object createClassInstance(String className, Object[] classes, Object[] arguments) {
+		try {
+			Class requestedClass = Class.forName(className);
+			Constructor requestedConstructor = requestedClass.getConstructor();
+			return requestedConstructor.newInstance();
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 }

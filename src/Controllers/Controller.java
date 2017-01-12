@@ -1,8 +1,4 @@
 package Controllers;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.lang.reflect.*;
 import Helpers.CommonHelpers;
 
@@ -25,33 +21,25 @@ public class Controller {
 		this.headers = headers;
 		this.currentAction = route.split("=>")[2].split("#")[1];
 
-		try {
-			Class modelClass;
-			modelClass = Class.forName("Models." + getControllerName() + "Model");
-			Constructor modelConstructor = modelClass.getConstructor();
-			this.model = modelConstructor.newInstance();
-			this.modelData = getModelData();
-			
-			Class viewClass;
-			viewClass = Class.forName("Views." + getControllerName() + "View");
-			Constructor viewConstructor = viewClass.getConstructor(Object.class, String.class);
-			this.view = viewConstructor.newInstance(new Object[] { this.modelData, this.currentAction });
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException | ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+		this.model = CommonHelpers.createClassInstance("Models." + getControllerName() + "Model");
+		this.modelData = getModelData();
+		
+		initializeView(this.currentAction);
 	}
 	
 	protected String redirectTo(String action) {
+		initializeView(action);
+		return getGeneratedView();
+	}
+	
+	private void initializeView(String action) {
 		try {
-			Class viewClass;
-			viewClass = Class.forName("Views." + getControllerName() + "View");
+			Class viewClass = Class.forName("Views." + getControllerName() + "View");
 			Constructor viewConstructor = viewClass.getConstructor(Object.class, String.class);
 			this.view = viewConstructor.newInstance(new Object[] { this.modelData, action });
-			return getGeneratedView();
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		return "";
 	}
 	
 	protected Object getModelData() {
