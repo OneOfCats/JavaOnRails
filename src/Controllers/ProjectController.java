@@ -15,4 +15,8 @@ public class ProjectController extends Controller {
 	public String add() {
 		return this.response = getGeneratedView();
 	}
+	
+	public String create() {
+		return this.response = redirectTo("index");
+	}
 }

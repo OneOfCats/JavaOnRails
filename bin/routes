@@ -1,2 +1,3 @@
 root=>GET=>Project#index
 project/add=>GET=>Project#add
+project/add=>POST=>Project#create

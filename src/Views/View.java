@@ -152,7 +152,11 @@ public class View {
 		return "<input type=\"" + type + "\" name=\"" + name + "\">";
 	}
 	
-	protected String a(String href, String text) {
-		return "<a href=\"" + href + "\">"  + text + "</a>";
+	protected String a(String href, String content) {
+		return "<a href=\"" + href + "\">"  + content + "</a>";
+	}
+	
+	protected String form(String action, String content) {
+		return "<form action=\"" + action + "\">"  + content + "</form>";
 	}
 }

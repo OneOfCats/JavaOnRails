@@ -30,9 +30,12 @@ public class ProjectView extends View {
 				h2("Project index page") +
 				a("/", "back") +
 				div(
-						span("Имя: ") + input("text", "firstName") + br() +
-						span("Фамилия: ") + input("text", "secondName") + br() +
-						span("Тема: ") + input("text", "projectTitle") + br()
+						form("/project/new", 
+							span("Имя: ") + input("text", "firstName") + br() +
+							span("Фамилия: ") + input("text", "secondName") + br() +
+							span("Тема: ") + input("text", "projectTitle") + br() +
+							input("submit", "projectTitle")
+						)
 				);
 		return page;
 	}

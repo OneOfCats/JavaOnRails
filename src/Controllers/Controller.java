@@ -40,6 +40,19 @@ public class Controller {
 		}
 	}
 	
+	protected String redirectTo(String action) {
+		try {
+			Class viewClass;
+			viewClass = Class.forName("Views." + getControllerName() + "View");
+			Constructor viewConstructor = viewClass.getConstructor(Object.class, String.class);
+			this.view = viewConstructor.newInstance(new Object[] { this.modelData, action });
+			return getGeneratedView();
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
 	protected Object getModelData() {
 		try {
 			Method getData = this.model.getClass().getMethod("getData");
