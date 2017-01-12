@@ -90,4 +90,8 @@ public class Controller {
 		}
 		return "";
 	}
+	
+	public String[][] getPostInputData() {
+		
+	}
 }
