@@ -101,7 +101,7 @@ public class RequestHandler implements Runnable {
     	catch(Exception e){ 
     		System.err.println("Headers cannot be read"); 
     	}
-    	if(var.substring(0, 3) == "POST"){
+    	if(var.substring(0, 4).equals("POST")){
     		this.method = "POST";
     	}
     	return var;

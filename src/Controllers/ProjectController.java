@@ -1,11 +1,16 @@
 package Controllers;
 import Models.ProjectData;
+import Models.ProjectModel;
 
 public class ProjectController extends Controller {
+	private ProjectModel projectModel;
+	private ProjectData projectData;
 	
 	public ProjectController(String route, String headers) {
 		super(route, headers);
-		this.modelData = (ProjectData) this.modelData;
+		//this.model = (ProjectModel) this.model;
+		this.projectModel = (ProjectModel) this.model;
+		this.projectData = (ProjectData) this.modelData;
 	}
 	
 	public String index() {
@@ -17,6 +22,8 @@ public class ProjectController extends Controller {
 	}
 	
 	public String create() {
+		this.projectModel.addProject("blabla", "asdasd", "fgrg");
+		this.projectModel.save();
 		return this.response = redirectTo("index");
 	}
 }

@@ -156,6 +156,6 @@ public class View {
 	}
 	
 	protected String form(String action, String content) {
-		return "<form action=\"" + action + "\">"  + content + "</form>";
+		return "<form method=\"post\" action=\"" + action + "\">"  + content + "</form>";
 	}
 }

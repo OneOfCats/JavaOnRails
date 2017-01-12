@@ -30,7 +30,7 @@ public class ProjectView extends View {
 				h2("Project index page") +
 				a("/", "back") +
 				div(
-						form("/project/new", 
+						form("/project/add", 
 							span("Имя: ") + input("text", "firstName") + br() +
 							span("Фамилия: ") + input("text", "secondName") + br() +
 							span("Тема: ") + input("text", "projectTitle") + br() +
@@ -38,6 +38,10 @@ public class ProjectView extends View {
 						)
 				);
 		return page;
+	}
+	
+	public String create() {
+		return "";
 	}
 	
 	private String loopProjects() {
