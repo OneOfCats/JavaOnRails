@@ -4,6 +4,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.lang.reflect.*;
+import Helpers.CommonHelpers;
 
 public class Controller {
 	protected String currentAction;
@@ -67,14 +68,22 @@ public class Controller {
 	
 	protected Object getModelContents(){
 		try {
-			Method getModelContents;
-			getModelContents = this.model.getClass().getMethod("getModelContents");
-			Object data = (Object) getModelContents.invoke(this.model);
+			Object data = (Object) CommonHelpers.invokeMethod("getModelContents", this.model);
 			return data;
-		} catch (SecurityException | NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+		} catch (SecurityException | IllegalArgumentException e) {
         	System.out.println(e);
         }
 		return null;
+	}
+	
+	protected void addModelContents(String content) {
+		try {
+			Method getModelContents;
+			getModelContents = this.model.getClass().getMethod("getModelContents");
+			Object data = (Object) getModelContents.invoke(this.model);
+		} catch (SecurityException | NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+        	System.out.println(e);
+        }
 	}
 	
 	/**
