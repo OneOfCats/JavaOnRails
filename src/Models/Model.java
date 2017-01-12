@@ -1,6 +1,7 @@
 package Models;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -56,8 +57,10 @@ public class Model {
 	
 	protected boolean writeToModelFile(String contents) {
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter("src/Models/" + this.getClass().getSimpleName() + ".json"));
-			bw.write(contents);
+			File json = new File("src/Models/" + this.getClass().getSimpleName() + ".json");
+			FileWriter writer = new FileWriter(json);
+			writer.write(contents);
+			writer.close();
 			return true;
 		} catch (IOException e) {
 			e.printStackTrace();
