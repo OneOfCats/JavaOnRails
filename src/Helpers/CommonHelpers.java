@@ -33,15 +33,4 @@ public class CommonHelpers {
 		}
 		return null;
 	}
-	
-	public static Object createClassInstance(String className, Object[] classes, Object[] arguments) {
-		try {
-			Class requestedClass = Class.forName(className);
-			Constructor requestedConstructor = requestedClass.getConstructor();
-			return requestedConstructor.newInstance();
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException | ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
 }
