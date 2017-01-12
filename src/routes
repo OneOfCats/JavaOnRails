@@ -1,2 +1,2 @@
 root=>GET=>Project#index
-/project/[0-9]*=>GET=>Project#show
+project/add=>GET=>Project#add

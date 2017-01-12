@@ -1,20 +1,53 @@
 package Views;
 
+import Models.ProjectData;
+import Models.ProjectData.*;
+
 public class ProjectView extends View {
 	public String page;
+	public ProjectData content;
 	
 	public ProjectView(Object content, String currentAction) {
 		super(content, currentAction);
+		this.content = (ProjectData) content;
+		generateView(currentAction);
 	}
 	
-	protected String index() {
+	public String index() {
 		this.page = "";
 		this.page += 
 				h2("Project index page") +
+				a("/project/add", "add project") +
 				div(
-					span("bla-bla")
-					)
-				;
+						loopProjects()
+				);
 		return page;
+	}
+	
+	public String add() {
+		this.page = "";
+		this.page += 
+				h2("Project index page") +
+				a("/", "back") +
+				div(
+						span("Имя: ") + input("text", "firstName") + br() +
+						span("Фамилия: ") + input("text", "secondName") + br() +
+						span("Тема: ") + input("text", "projectTitle") + br()
+				);
+		return page;
+	}
+	
+	private String loopProjects() {
+		String result = "";
+		for (ProjectDataItem item : this.content.projects) {
+			result += 
+			div(
+					span("Имя: ") + span(item.firstName) + br() +
+					span("Фамилия: ") + span(item.lastName) + br() +
+					span("Тема: ") + span(item.title) + br() + br()
+			);
+		}
+		
+		return result;
 	}
 }

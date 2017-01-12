@@ -1,6 +1,7 @@
 package Views;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.charset.Charset;
@@ -11,7 +12,6 @@ public class View {
 	protected String generatedView;
 	
 	public View(Object content, String currentAction) {
-		generateView(content, currentAction);
 	}
 	
 	/**
@@ -30,13 +30,14 @@ public class View {
 	 * @param contents content for a view
 	 * @return String generated view
 	 */
-	public String generateView(Object contents, String currentAction) {
+	public String generateView(String currentAction) {
 		try {
 			String layout = readFile("src/Views/" + "layout" + ".html", Charset.forName("UTF-8"));
 			Method action;
 			String page;
 			try {
-				action = this.getClass().getMethod(currentAction);
+				Class<?> viewClass = this.getClass();
+				action = viewClass.getMethod(currentAction);
 				page = (String) action.invoke(this);
 				this.generatedView = layout.replaceAll("<java-content>", page);
 			} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
@@ -141,5 +142,17 @@ public class View {
 	
 	protected String div(String content) {
 		return div(content, "", "");
+	}
+	
+	protected String br() {
+		return "<br>";
+	}
+	
+	protected String input(String type, String name) {
+		return "<input type=\"" + type + "\" name=\"" + name + "\">";
+	}
+	
+	protected String a(String href, String text) {
+		return "<a href=\"" + href + "\">"  + text + "</a>";
 	}
 }

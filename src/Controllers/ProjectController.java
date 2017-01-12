@@ -1,17 +1,18 @@
 package Controllers;
-import java.lang.reflect.*;
-
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Paths;
+import Models.ProjectData;
 
 public class ProjectController extends Controller {
 	
 	public ProjectController(String route, String headers) {
 		super(route, headers);
+		this.modelData = (ProjectData) this.modelData;
 	}
 	
 	public String index() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String add() {
 		return this.response = getGeneratedView();
 	}
 }

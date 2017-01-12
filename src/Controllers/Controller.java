@@ -76,7 +76,7 @@ public class Controller {
 	protected String getGeneratedView() {
 		try {
 			Method getGeneratedViewMethod = this.view.getClass().getMethod("getGeneratedView");
-			String page = (String) getGeneratedViewMethod.invoke(this.model);
+			String page = (String) getGeneratedViewMethod.invoke(this.view);
 			return page;
 		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			// TODO Auto-generated catch block

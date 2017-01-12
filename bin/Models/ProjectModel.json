@@ -3,12 +3,12 @@
 		{	
 			"title": "Project title 1",
 			"firstName": "Vladick",
-			"secondName": "Raikhberh"
+			"lastName": "Raikhberh"
 		},
 		{
 			"title": "Project title 2",
 			"firstName":"Sanek",
-			"secondName":"Tischenko"
+			"lastName":"Tischenko"
 		}
 	]
 }

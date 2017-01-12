@@ -14,7 +14,8 @@ public class Model {
 		Gson gson = new Gson();
 		String contents = getModelFile();
 		try {
-			this.data = gson.fromJson(contents, Class.forName("Models." + getModelName() + "Data"));
+			String className = "Models." + getModelName() + "Data";
+			this.data = gson.fromJson(contents, Class.forName(className));
 		} catch (JsonSyntaxException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
