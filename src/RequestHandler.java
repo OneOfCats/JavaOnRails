@@ -91,7 +91,6 @@ public class RequestHandler implements Runnable {
     	try{
             while(true) {
                 String s = br.readLine();
-                System.out.println(s);
                 var += s + "\n";
                 if(s == null || s.trim().length() == 0) {
                     break;
@@ -104,7 +103,28 @@ public class RequestHandler implements Runnable {
     	if(var.substring(0, 4).equals("POST")){
     		this.method = "POST";
     	}
+    	var += readInputBody(getContentLength(var), br);
+    	System.out.println(var);
     	return var;
+    }
+    
+    private String readInputBody(int contentLength, BufferedReader br) {
+    	String body = "";
+    	try {
+	    	for(int i = 0; i < contentLength; i++) {
+					body += (char) br.read();
+	    	}
+    	} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	return body;
+    }
+    
+    private int getContentLength(String headers) {
+    	int begin = headers.indexOf("Content-Length") + 16;
+    	int end = headers.indexOf('\n', begin);
+    	String amount = headers.substring(begin, end);
+    	return Integer.parseInt(amount);
     }
     
     /**
