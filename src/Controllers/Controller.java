@@ -10,6 +10,7 @@ public class Controller {
 	protected Object model;
 	protected Object view;
 	protected Object modelData;
+	protected String[][] postData;
 	
 	/**
 	 * Controller constructor
@@ -20,6 +21,7 @@ public class Controller {
 		this.route = route;
 		this.headers = headers;
 		this.currentAction = route.split("=>")[2].split("#")[1];
+		if(this.route.split("=>")[1].equals("POST")) this.postData = getPostInputData();
 
 		this.model = CommonHelpers.createClassInstance("Models." + getControllerName() + "Model");
 		this.modelData = getModelData();
@@ -27,11 +29,20 @@ public class Controller {
 		initializeView(this.currentAction);
 	}
 	
+	/**
+	 * Redirects a user to a specified action page
+	 * @param action for a view
+	 * @return String text of an HTML page
+	 */
 	protected String redirectTo(String action) {
 		initializeView(action);
 		return getGeneratedView();
 	}
 	
+	/**
+	 * Builds a view page string and saves it to a controller object
+	 * @param action for a view
+	 */
 	private void initializeView(String action) {
 		try {
 			Class viewClass = Class.forName("Views." + getControllerName() + "View");
@@ -42,6 +53,10 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * Gets model content
+	 * @return Object ModelData object
+	 */
 	protected Object getModelData() {
 		try {
 			Object data = (Object) CommonHelpers.invokeMethod("getData", this.model);
@@ -53,6 +68,7 @@ public class Controller {
 		return null;
 	}
 	
+	/*
 	protected Object getModelContents(){
 		try {
 			Object data = (Object) CommonHelpers.invokeMethod("getModelContents", this.model);
@@ -62,7 +78,9 @@ public class Controller {
         }
 		return null;
 	}
+	*/
 	
+	/*
 	protected void addModelContents(String content) {
 		try {
 			Object data = (Object) CommonHelpers.invokeMethod("getModelContents", this.model);
@@ -70,6 +88,7 @@ public class Controller {
         	System.out.println(e);
         }
 	}
+	*/
 	
 	/**
 	 * This method returns a controller name
@@ -80,6 +99,10 @@ public class Controller {
 		return className.replaceAll("Controller$", "");
 	}
 	
+	/**
+	 * Invokes an action method for the current view
+	 * @return String HTML page
+	 */
 	protected String getGeneratedView() {
 		try {
 			String page = (String) CommonHelpers.invokeMethod("getGeneratedView", this.view);
@@ -91,7 +114,18 @@ public class Controller {
 		return "";
 	}
 	
+	/**
+	 * Parses POST data into an array
+	 * @return String[][] array of post data (key - value)
+	 */
 	public String[][] getPostInputData() {
-		
+		int space = this.headers.indexOf("\n\n") + 2;
+		String[] body = this.headers.substring(space).split("&");
+		String[][] fracturedBody = new String[body.length - 1][2];
+		for (int i = 0; i < body.length - 1; i++) {
+			fracturedBody[i][0] = body[i].split("=")[0];
+			fracturedBody[i][1] = body[i].split("=")[1];
+		}
+		return fracturedBody;
 	}
 }

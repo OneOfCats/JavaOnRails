@@ -102,8 +102,8 @@ public class RequestHandler implements Runnable {
     	}
     	if(var.substring(0, 4).equals("POST")){
     		this.method = "POST";
+    		var += readInputBody(getContentLength(var), br);
     	}
-    	var += readInputBody(getContentLength(var), br);
     	System.out.println(var);
     	return var;
     }

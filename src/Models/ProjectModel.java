@@ -11,8 +11,8 @@ public class ProjectModel extends Model {
 	public boolean addProject(String title, String firstName, String lastName) {
 		ProjectData.ProjectDataItem pdi = this.modelData.new ProjectDataItem();
 		pdi.title = title;
-		pdi.firstName = title;
-		pdi.lastName = title;
+		pdi.firstName = firstName;
+		pdi.lastName = lastName;
 		return this.modelData.projects.add(pdi);
 	}
 	

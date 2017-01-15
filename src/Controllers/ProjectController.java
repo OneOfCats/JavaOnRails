@@ -22,7 +22,7 @@ public class ProjectController extends Controller {
 	}
 	
 	public String create() {
-		this.projectModel.addProject("blabla", "asdasd", "fgrg");
+		this.projectModel.addProject(this.postData[2][1], this.postData[0][1], this.postData[1][1]);
 		this.projectModel.save();
 		return this.response = redirectTo("index");
 	}
