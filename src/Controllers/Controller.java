@@ -108,10 +108,9 @@ public class Controller {
 			String page = (String) CommonHelpers.invokeMethod("getGeneratedView", this.view);
 			return page;
 		} catch (SecurityException | IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("No such view action");
+			return "";
 		}
-		return "";
 	}
 	
 	/**
@@ -122,9 +121,13 @@ public class Controller {
 		int space = this.headers.indexOf("\n\n") + 2;
 		String[] body = this.headers.substring(space).split("&");
 		String[][] fracturedBody = new String[body.length - 1][2];
+		System.out.println("POST data:");
 		for (int i = 0; i < body.length - 1; i++) {
-			fracturedBody[i][0] = body[i].split("=")[0];
-			fracturedBody[i][1] = body[i].split("=")[1];
+			String[] splitted = body[i].split("=");
+			for(int j = 0; j < splitted.length && j < 2; j++) {
+				fracturedBody[i][j] = body[i].split("=")[j];
+			}
+			System.out.println(fracturedBody[i][0] + ": " + fracturedBody[i][1]);
 		}
 		return fracturedBody;
 	}

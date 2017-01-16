@@ -39,8 +39,14 @@ public class RequestHandler implements Runnable {
         try {
             String headers = readInputHeaders();
             String route = findProperRoute(headers);
+            if (route.equals("not found")){
+            	writeResponse404();
+            	return;
+            }
             String controller = route.split("=>")[2].split("#")[0];
             String action = route.split("=>")[2].split("#")[1];
+            
+            if(action.indexOf('.') != -1) return;
             
             Class controllerClass = Class.forName("Controllers." + controller + "Controller");
             Constructor controllerConstructor = controllerClass.getConstructor(String.class, String.class);
@@ -74,6 +80,18 @@ public class RequestHandler implements Runnable {
         String response = "HTTP/1.1 200 OK\r\n" +
                 "Content-Type: text/html\r\n" +
                 "Content-Length: " + s.length() + "\r\n" +
+                "Connection: close\r\n\r\n";
+        String result = response + s;
+        os.write(result.getBytes());
+        os.flush();
+    }
+    
+    /**
+     * This method makes a response to a user
+     */
+    private void writeResponse404() throws Throwable {
+        String response = "HTTP/1.1 404 Not Found\r\n" +
+                "Content-Type: text/html; charset-UTF-8\r\n" +
                 "Connection: close\r\n\r\n";
         String result = response + s;
         os.write(result.getBytes());
@@ -159,6 +177,6 @@ public class RequestHandler implements Runnable {
     	} catch (IOException e) {
     		System.out.println(e);
     	}
-    	return findProperRoute("GET root");
+    	return "not found";
     }
 }

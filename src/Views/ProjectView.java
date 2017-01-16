@@ -1,5 +1,8 @@
 package Views;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+
 import Models.ProjectData;
 import Models.ProjectData.*;
 
@@ -31,17 +34,13 @@ public class ProjectView extends View {
 				a("/", "back") +
 				div(
 						form("/project/add", 
-							span("Имя: ") + input("text", "firstName") + br() +
-							span("Фамилия: ") + input("text", "secondName") + br() +
-							span("Тема: ") + input("text", "projectTitle") + br() +
+							span("First Name: ") + input("text", "firstName") + br() +
+							span("Second Name: ") + input("text", "secondName") + br() +
+							span("Project: ") + input("text", "projectTitle") + br() +
 							input("submit", "projectTitle")
 						)
 				);
 		return page;
-	}
-	
-	public String create() {
-		return "";
 	}
 	
 	private String loopProjects() {
@@ -49,12 +48,21 @@ public class ProjectView extends View {
 		for (ProjectDataItem item : this.content.projects) {
 			result += 
 			div(
-					span("Имя: ") + span(item.firstName) + br() +
-					span("Фамилия: ") + span(item.lastName) + br() +
-					span("Тема: ") + span(item.title) + br() + br()
+					span("First Name: ") + span(item.firstName) + br() +
+					span("Second Name: ") + span(item.lastName) + br() +
+					span("Project: ") + span(item.title) + br() + br()
 			);
 		}
 		
 		return result;
+	}
+	
+	public String page03() {
+		try {
+			return readFile("src/Views/Project/" + "page03" + ".html", Charset.forName("UTF-8"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "";
 	}
 }

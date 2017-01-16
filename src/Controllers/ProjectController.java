@@ -26,4 +26,15 @@ public class ProjectController extends Controller {
 		this.projectModel.save();
 		return this.response = redirectTo("index");
 	}
+	
+	public String page03() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page03post() {
+		for(String[] data : this.postData) {
+			System.out.println(data[0] + ": " + data[1] + '\n');
+		}
+		return this.response = redirectTo("page03");
+	}
 }
