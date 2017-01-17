@@ -13,6 +13,12 @@ public class ProjectController extends Controller {
 		this.projectData = (ProjectData) this.modelData;
 	}
 	
+	public void postDataToConsole() {
+		for(String[] data : this.postData) {
+			System.out.println(data[0] + ": " + data[1] + '\n');
+		}
+	}
+	
 	public String index() {
 		return this.response = getGeneratedView();
 	}
@@ -27,14 +33,165 @@ public class ProjectController extends Controller {
 		return this.response = redirectTo("index");
 	}
 	
+	public String page01() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page01post() {
+		postDataToConsole();
+		return this.response = redirectTo("page01");
+	}
+	
+	public String page01_2() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page01_2post() {
+		postDataToConsole();
+		return this.response = redirectTo("page01_2");
+	}
+	
+	public String page02() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page02post() {
+		postDataToConsole();
+		return this.response = redirectTo("page02");
+	}
+	
 	public String page03() {
 		return this.response = getGeneratedView();
 	}
 	
 	public String page03post() {
-		for(String[] data : this.postData) {
-			System.out.println(data[0] + ": " + data[1] + '\n');
-		}
+		postDataToConsole();
 		return this.response = redirectTo("page03");
+	}
+	
+	public String page03_2() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page03_2post() {
+		postDataToConsole();
+		return this.response = redirectTo("page03_2");
+	}
+	
+	public String page04() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page04post() {
+		postDataToConsole();
+		return this.response = redirectTo("page04");
+	}
+	
+	public String page04_2() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page04_2post() {
+		postDataToConsole();
+		return this.response = redirectTo("page04_2");
+	}
+	
+	public String page05() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page05post() {
+		postDataToConsole();
+		return this.response = redirectTo("page05");
+	}
+	
+	public String page06() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page06post() {
+		postDataToConsole();
+		return this.response = redirectTo("page06");
+	}
+	
+	public String page07() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page07post() {
+		postDataToConsole();
+		return this.response = redirectTo("page07");
+	}
+	
+	public String page07_2() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page07_2post() {
+		postDataToConsole();
+		return this.response = redirectTo("page07_2");
+	}
+	
+	public String page07_3() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page07_3post() {
+		postDataToConsole();
+		return this.response = redirectTo("page07_3");
+	}
+	
+	public String page08() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page08post() {
+		postDataToConsole();
+		return this.response = redirectTo("page08");
+	}
+	
+	public String page08_2() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page08_2post() {
+		postDataToConsole();
+		return this.response = redirectTo("page08_2");
+	}
+	
+	public String page09() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page09post() {
+		postDataToConsole();
+		return this.response = redirectTo("page09");
+	}
+	
+	public String page09_2() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page09_2post() {
+		postDataToConsole();
+		return this.response = redirectTo("page09_2");
+	}
+	
+	public String page10() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page10post() {
+		postDataToConsole();
+		return this.response = redirectTo("page10");
+	}
+	
+	public String page10_2() {
+		return this.response = getGeneratedView();
+	}
+	
+	public String page10_2post() {
+		postDataToConsole();
+		return this.response = redirectTo("page10_2");
 	}
 }

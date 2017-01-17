@@ -1,0 +1,183 @@
+﻿<div class="row">
+	<div class="col-md-12">
+		<header>
+			<h1 class="documentHeader"> Author search
+				<ul class="list-inline">
+					<li>
+						<a class="btn-link" href="../source/eval/handle.uri@navbar=t&amp;origin=searchauthorlookup&amp;zone=topnavbar" title="Compare sources based on citation metrics." target="_top"><span class="anchorText">Compare sources</span>
+							<span class="ico-navigate-right" aria-hidden="true"></span></a>
+						</li>   
+					</ul>
+				</h1>
+			</header>
+		</div>
+	</div>
+	<div class="row">
+		<div id="contentWrapper" class="col-md-12">
+			<div id="alertArea" aria-live="polite" aria-atomic="true">
+			</div>
+			<div id="container"> 
+				<a name="skip1" id="skip1" href="#"></a>
+				<div id="searchSection">
+					<div id="errorContainer">
+					</div>
+					<div class="contentSection">
+						<div class="marketingTextZone">		
+							<div class="alert alert-info">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+								<p>
+								</p><div id="authorTextZoneDivHolder">
+								<div style="padding: 16px 10px;">
+									<div class="contentPadding txtSmaller">
+										To determine which author names should be grouped together under a
+										single identifier number, the Scopus Author Identifier uses an
+										algorithm that matches author names based on their affiliation,
+										address, subject area, source title, dates of publication, citations,
+										and co-authors. Documents with insufficient data may not be matched,
+										this can lead to more than one entry in the results list for the same
+										author. By default, only details pages matched to more than one
+										document in Scopus are shown in search results.&nbsp;&nbsp;<a title="More Information (Opens in new window)" target="_new" href="../standard/help.url@topic=2845">About Scopus Author
+										Identifier</a>
+									</div>
+								</div>
+							</div><p></p>
+						</div>
+					</div>
+					<div class="formContentSection">
+						<script type="text/javascript">	
+							var allowAffilProfiling = true;
+						</script>
+						<form id="authorLookupSearchForm" name="AuthorLookupResultsForm" action="/project/page02" method="post">
+							<input type="hidden" name="origin" value="searchauthorlookup">
+							<input id="src" name="src" type="hidden" value="al">
+							<input id="edit" name="edit" type="hidden" value="">
+							<input id="poppUp" name="poppUp" type="hidden" value="">
+							<div class="row wrapper">
+								<div class="col-md-12">
+									<ul id="internalTabs" class="nav nav-pills">
+										<li><a href="javascript:authorLookupFormSubmit('basic');">Documents</a></li>
+										<li class="active"><a href="javascript:void(0);">Authors</a></li>
+										<li><a href="javascript:authorLookupFormSubmit('affiliation');">Affiliations</a></li>
+										<li><a href="javascript:authorLookupFormSubmit('advanced');">Advanced</a></li>
+										<li class="helperLink">
+											<a href="../standard/help.uri@topic=2328" target="globalHelp" onclick="return openGlobalhelp('../standard/help.uri@topic=2328','globalHelp',760,570,0)" title="Search tips (Opens in a new window)">
+												<span class="btnText">Search tips</span>
+												<span class="ico-help-icon fontLarge" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<input type="hidden" name="basicTab" value="" alt="Select to search for documents.">
+									<input type="hidden" name="affiliationTab" value="" alt="Select to search for affiliations.">
+									<input type="hidden" name="advancedTab" value="" alt="Select to perform advanced queries.">
+									<div class="row formRow">
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="formControls"> 
+													<label for="authorLastName" class="inputTextLabel">Author last name</label>
+													<input type="text" name="st1" id="lastname" size="45" maxlength="200" value="">
+													<button type="button" class="btn btn-link clearButton hidden">
+														<span class="sr-only">Clear Field</span>
+														<span class="ico-delete fontLarge" aria-hidden="true"></span>
+													</button>
+												</span> 
+												<span class="help-block">e.g. Smith</span>
+												<span id="error-lastname" class="errorNote hidden">No last name was entered. Enter a last name and click search.</span>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="formControls"> 
+													<label for="authorFirstName" class="inputTextLabel">Author first name</label>
+													<input type="text" name="st2" value="" id="firstname" size="40" maxlength="200">
+													<button type="button" class="btn btn-link clearButton hidden">
+														<span class="sr-only">Clear Field</span>
+														<span class="ico-delete fontLarge" aria-hidden="true"></span>
+													</button>
+												</span>
+												<span class="help-block">e.g. J.L.</span>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="formControls"> 
+													<label for="affiliationSearch" class="inputTextLabel">Affiliation</label>
+													<input type="text" name="institute" id="institute" size="45" maxlength="200" value="">
+													<button type="button" class="btn btn-link clearButton hidden">
+														<span class="sr-only">Clear Field</span>
+														<span class="ico-delete fontLarge" aria-hidden="true"></span>
+													</button>
+												</span> 
+												<span class="help-block">e.g. University of Toronto</span>
+											</div>
+										</div>
+										<div class="col-md-4 paddingT1">
+											<input type="checkbox" id="exactSearch" value="on">
+											<label id="exactSearchCheck" for="exactSearch" class="checkbox-label">Show exact matches only</label>
+										</div>
+										<div class="col-md-2">
+											<button id="authorMainSearch" type="submit" class="btn btn-primary pull-right" onclick="checkAuthOrOrcid(this.form.name);">
+												<span class="btnText authorSearch">Search</span> 
+												<span class="ico-search" aria-hidden="true"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<script>if (typeof prs != "undefined") {prs.rt("pcr");}</script>
+							<div class="row wrapper verticalAlign">
+								<div class="col-md-12">
+									<div class="row searchRow">
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="formControls"> 
+													<label for="orcidSearch" class="inputTextLabel"> 
+														<span class="pngIcon">
+															<img src="../static/proteus-images/orcid_icon.png" class="inputIcon" title="ORCID provides a persistent digital identifier for an author" alt="">
+														</span> 
+														<span class="labelText">ORCID</span>
+													</label> 
+													<input type="text" name="orcidId" id="orcidId" onkeypress="setCheckEmpty(true,event,'lookup',this.form.name);" size="45" maxlength="200" value="">
+													<button type="button" class="btn btn-link clearButton hidden">
+														<span class="sr-only">Clear Field</span>
+														<span class="ico-delete fontLarge" aria-hidden="true"></span>
+													</button>
+												</span> 
+												<span class="help-block">e.g. 1111-2222-3333-444x</span>
+												<span id="error-orcidId" class="errorNote hidden"></span>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<button id="authorORCIDSearch" type="submit" title="Search for an author's ORCID ID" class="btn btn-primary" onclick="setCheckOrcidEmpty(true);checkTheForm(this.form.name);">
+												<span class="btnText">Search</span>
+												<span class="ico-search" aria-hidden="true"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input id="subArea-1" name="authSubject" class="hidden" type="checkbox" value="LFSC" checked="checked"><input type="hidden" name="_authSubject" value="on">
+							<input id="subArea-2" name="authSubject" class="hidden" type="checkbox" value="HLSC" checked="checked"><input type="hidden" name="_authSubject" value="on">
+							<input id="subArea-3" name="authSubject" class="hidden" type="checkbox" value="PHSC" checked="checked"><input type="hidden" name="_authSubject" value="on">
+							<input id="subArea-4" name="authSubject" class="hidden" type="checkbox" value="SOSC" checked="checked"><input type="hidden" name="_authSubject" value="on">
+							<input type="hidden" name="s" value="">
+							<input type="hidden" name="sdt" value="al">
+							<input type="hidden" name="sot" value="al">
+							<input type="hidden" name="searchId" id="searchId" value="AB427695AFC87AA5B2CF806100D768B3.wsnAw8kcdt7IPYLO0V48gA:150">  
+							<input type="hidden" name="exactSearch" value="off">
+							<input id="sid" name="sid" value="AB427695AFC87AA5B2CF806100D768B3.wsnAw8kcdt7IPYLO0V48gA:150" type="hidden"> 	
+						</form>
+					</div>
+				</div>
+				<div id="scopusPartnerBubble" class="row hide">
+					<a href="../ucd/usability.uri" class="learnMore" onclick="logUsage('../ucd/usability.uri','ResourceLink','Resources')" title="Learn more about how to improve Scopus ">
+						<span class="learnMoreText">Learn more about how to </span>
+						<span class="improveScopusText">Improve Scopus</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>

@@ -1,0 +1,389 @@
+﻿<div class="row">
+	<div class="col-md-12">
+		<header>
+			<h1 class="documentHeader"> Document search
+				<ul class="list-inline">
+					<li>
+						<a class="btn-link" href="../source/eval/handle.uri@navbar=t&amp;origin=searchbasic&amp;zone=topnavbar" title="Compare sources based on citation metrics." target="_top"><span class="anchorText">Compare sources</span>
+							<span class="ico-navigate-right" aria-hidden="true"></span></a>
+						</li>   
+					</ul>
+				</h1>
+			</header>
+		</div>
+	</div>
+	<div class="row">
+		<div id="contentWrapper" class="col-md-12">
+			<div id="alertArea" aria-live="polite" aria-atomic="true">
+			</div>
+			<div id="container"> 
+				<a name="skip1" id="skip1" href="#"></a>
+				<div id="searchSection">
+					<div id="errorContainer">
+					</div>
+					<div class="contentSection">
+						<div class="marketingTextZone">		
+							<div class="alert alert-info">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+								<p>
+								</p><div id="marketingTextZoneDivHolder">
+								<span>
+									<p>Scopus has a new look! Click <a href="../../https@blog.scopus.com/posts/scopus-gets-a-more-streamlined-look">here</a> for more details</p>
+									<a href="../sources" target="_blank">Scopus is expanding its basket of metrics by adding CiteScore metrics</a> — a free family of eight indicators that offer a broader and more transparent perspective of sources.
+								</span>
+							</div>
+							<p></p>
+						</div>
+					</div>
+					<div class="formContentSection">
+						<form id="searchResultsForm" name="SearchResultsForm" action="/project/page03-2" method="post">
+							<input type="hidden" id="numberOfFields" name="numberOfFields" value="3">    
+							<input id="src" name="src" type="hidden" value="s">
+							<input id="clickedLink" name="clickedLink" type="hidden" value="">
+							<input id="edit" name="edit" type="hidden" value="">
+							<input type="hidden" name="editSaveSearch" id="editSaveSearch" value="">
+							<input type="hidden" name="origin" value="searchbasic">
+							<div class="row wrapper">
+								<div class="col-md-12">
+									<ul id="internalTabs" class="nav nav-pills">
+										<li class="active"><a href="javascript:void(0)"> Documents</a></li>
+										<li><a href="javascript:basicFormSubmit('author');"> Authors</a></li>
+										<li><a href="javascript:basicFormSubmit('affiliation');"> Affiliations</a></li>
+										<li><a href="javascript:basicFormSubmit('advanced');">Advanced</a></li>
+										<li class="helperLink">
+											<a href="../standard/help.uri@topic=2370" target="globalHelp" onclick="return openGlobalhelp('../standard/help.uri@topic=2370','globalHelp',760,570,0)" title="Search tips (Opens in a new window)">
+												<span class="btnText">Search tips</span>
+												<span class="ico-help-icon fontLarge" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<input type="hidden" name="authorTab" value="" alt="Select to search for authors.">
+									<input type="hidden" name="affiliationTab" value="" alt="Select to search for affiliations.">
+									<input type="hidden" name="advancedTab" value="" alt="Select to perform advanced queries.">
+									<div class="clear"></div>
+									<div id="basicsearchform" class="row formRow">
+										<div id="searchTable" class="col-md-6">
+											<div class="form-group">
+												<span class="formControls" id="txtBoxSearch">
+													<input name="scint" type="hidden" value="1">
+													<input name="menu" type="hidden" value="search"> 
+													<input name="tablin" type="hidden" value="">
+													<label for="searchterm1" class="inputTextLabel"> Search</label>
+													<input type="text" size="46" maxlength="256" id="searchterm1" name="searchterm1" aria-labelledby="errorMsgContainer" value="">
+													<button type="button" class="btn btn-link clearButton hidden">
+														<span class="sr-only">Clear Field</span>
+														<span class="ico-delete fontLarge" aria-hidden="true"></span>
+													</button>
+												</span>
+												<span id="help-block-text" class="help-block">E.g., Brookhaven National Laboratory</span>
+												<span id="error-searchterm1" class="errorNote hidden">No search term entered. Enter one or more search term and click search.</span>
+												<script>if(typeof prs != "undefined"){prs.rt("pcr");}</script>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<label class="sr-only" for="searchTypeChoices">Search Field Type</label>
+											<select id="field1" name="field1" class="largeSelect" style="display: none;">
+												<option value="ALL">All fields</option><option value="TITLE_ABS_KEY">Article title, Abstract, Keywords</option><option value="AUTHOR_NAME">Authors</option><option value="FIRSTAUTH">First author</option><option value="SRCTITLE">Source title</option><option value="TITLE">Article title</option><option value="ABS">Abstract</option><option value="KEY">Keywords</option><option value="AFFIL">Affiliation</option><option value="AFFILORG" selected="selected">Affiliation name</option><option value="AFFILCITY">Affiliation city</option><option value="AFFILCOUNTRY">Affiliation country</option><option value="LANGUAGE">Language</option><option value="ISSN">ISSN</option><option value="CODEN">CODEN</option><option value="DOI">DOI</option><option value="REF">References</option><option value="CONF">Conference</option><option value="TITLE_ABS_KEY_AUTH">Article title, Abstract, Keywords, Authors</option><option value="CHEMNAME">Chemical name</option><option value="CASREGNUMBER">CAS number</option>
+											</select><span tabindex="0" id="field1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="field1-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 325px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">Affiliation name</span></span>
+											<button type="button" onclick="addSearchField()" class="btn btn-secondary btn-link addTermsBtn addRowBtn" data-toggle="tooltip" data-placement="bottom" title="Add additional search terms"> 
+												<span class="ico-plus icon" aria-hidden="true"></span> 
+												<span class="sr-only">Add additional search terms</span>
+											</button>
+											<br>
+										</div>
+									</div>
+									<div id="addTerms" class="row formRow" aria-live="polite" aria-atomic="true">
+										<div id="searchRow2" class="col-md-12">
+											<div title="Search Field Type" class="row searchRow">
+												<div class="col-md-12">
+													<label class="sr-only" for="connector-button"> Search Connector</label> 
+													<select id="connector" name="connector" class="smallSelect" style="display: none;">
+														<option value="AND">AND</option><option value="OR">OR</option><option value="AND NOT">AND NOT</option>
+													</select><span tabindex="0" id="connector-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="connector-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 150px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">AND</span></span>
+												</div>
+											</div>
+											<div class="row searchRow">
+												<div class="col-md-6">
+													<span class="formControls">
+														<label class="inputTextLabel" for="searchterm2">Search</label>
+														<input type="text" size="46" maxlength="256" name="searchterm2" id="searchterm2" value="">
+														<button type="button" class="btn btn-link clearButton hidden">
+															<span class="sr-only">Clear Field</span>
+															<span class="ico-delete fontLarge" aria-hidden="true"></span>
+														</button>
+														<div id="suggest_list2" class="suggestions displayNone"></div>
+													</span>
+												</div>
+												<div title="Search Field Type" class="col-md-6">
+													<label class="sr-only" for="field2-button">search field type for second search term</label>
+													<select id="field2" name="field2" class="largeSelect field1" style="display: none;">
+														<option value="ALL">All fields</option><option value="TITLE_ABS_KEY">Article title, Abstract, Keywords</option><option value="AUTHOR_NAME">Authors</option><option value="FIRSTAUTH">First author</option><option value="SRCTITLE">Source title</option><option value="TITLE">Article title</option><option value="ABS">Abstract</option><option value="KEY">Keywords</option><option value="AFFIL">Affiliation</option><option value="AFFILORG">Affiliation name</option><option value="AFFILCITY" selected="selected">Affiliation city</option><option value="AFFILCOUNTRY">Affiliation country</option><option value="LANGUAGE">Language</option><option value="ISSN">ISSN</option><option value="CODEN">CODEN</option><option value="DOI">DOI</option><option value="REF">References</option><option value="CONF">Conference</option><option value="TITLE_ABS_KEY_AUTH">Article title, Abstract, Keywords, Authors</option><option value="CHEMNAME">Chemical name</option><option value="CASREGNUMBER">CAS number</option>
+													</select><span tabindex="0" id="field2-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="field2-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 325px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">Affiliation city</span></span>
+													<span class="addRowBtn">
+														<button type="button" onclick="removeSearchField(0)" id="removeId1" data-target="addSearchTerm1" class="btn btn-secondary btn-link deleteRow">
+															<span class="ico-minus" aria-hidden="true"></span>
+															<span class="sr-only">Delete this row</span>
+														</button>
+														<button type="button" onclick="addSearchField()" class="btn btn-secondary btn-link addTermsBtn" data-toggle="tooltip" data-placement="bottom" title="Add additional search terms">
+															<span class="ico-plus icon" aria-hidden="true"></span>
+															<span class="sr-only">Add additional search terms</span>
+														</button>
+													</span>
+												</div>
+											</div>
+											<div class="clear"></div>
+										</div>
+										<div id="RowId1" class="col-md-12">
+											<div title="Search Connector" class="row searchRow">
+												<div class="col-md-12"> 
+													<label class="sr-only" for="connector1-button">Search Connectors</label> 
+													<select name="connectors" id="connector1" class="smallSelect" style="display: none;">
+														<option value="AND" selected="selected">AND</option>
+														<option value="OR">OR</option>
+														<option value="AND NOT">AND NOT</option>
+													</select><span tabindex="0" id="connector1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="connector1-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 150px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">AND</span></span>
+												</div>
+											</div>
+											<div class="row searchRow">
+												<div class="col-md-6">
+													<span class="formControls">
+														<label class="inputTextLabel" for="searchterms1">Search</label>
+														<input type="text" size="46" maxlength="256" name="searchTerms" id="searchterms1" value="">
+														<button type="button" class="btn btn-link clearButton hidden">
+															<span class="sr-only">Clear Field</span>
+															<span class="ico-delete fontLarge" aria-hidden="true"></span>
+														</button>
+														<div id="suggests_list1" class="suggestions displayNone"></div>
+													</span>
+												</div>
+												<div title="Search Field Type" class="col-md-6">
+													<label class="sr-only" for="fields1-button">search field type for n search terms</label>
+													<select name="fields" id="fields1" class="largeSelect field1" style="display: none;">
+														<option value="ALL">All fields</option>
+														<option value="TITLE_ABS_KEY">Article title, Abstract, Keywords</option>
+														<option value="AUTHOR_NAME">Authors</option>
+														<option value="FIRSTAUTH">First author</option>
+														<option value="SRCTITLE">Source title</option>
+														<option value="TITLE">Article title</option>
+														<option value="ABS">Abstract</option>
+														<option value="KEY">Keywords</option>
+														<option value="AFFIL">Affiliation</option>
+														<option value="AFFILORG">Affiliation name</option>
+														<option value="AFFILCITY">Affiliation city</option>
+														<option value="AFFILCOUNTRY" selected="selected">Affiliation country</option>
+														<option value="LANGUAGE">Language</option>
+														<option value="ISSN">ISSN</option>
+														<option value="CODEN">CODEN</option>
+														<option value="DOI">DOI</option>
+														<option value="REF">References</option>
+														<option value="CONF">Conference</option>
+														<option value="TITLE_ABS_KEY_AUTH">Article title, Abstract, Keywords, Authors</option>
+														<option value="CHEMNAME">Chemical name</option>
+														<option value="CASREGNUMBER">CAS number</option>
+													</select><span tabindex="0" id="fields1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="fields1-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 325px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">Affiliation country</span></span>
+													<span class="addRowBtn">
+														<button type="button" onclick="removeSearchField(1)" id="removeId1" data-target="addSearchTerm1" class="btn btn-secondary btn-link deleteRow">
+															<span class="ico-minus" aria-hidden="true"></span>
+															<span class="sr-only">Delete this row</span>
+														</button>
+														<button type="button" onclick="addSearchField()" class="btn btn-secondary btn-link addTermsBtn" data-toggle="tooltip" data-placement="bottom" title="Add additional search terms">
+															<span class="ico-plus icon" aria-hidden="true"></span>
+															<span class="sr-only">Add additional search terms</span>
+														</button>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div id="RowId2" class="col-md-12">
+											<div title="Search Connector" class="row searchRow">
+												<div class="col-md-12"> 
+													<label class="sr-only" for="connector2-button">Search Connectors</label> 
+													<select name="connectors" id="connector2" class="smallSelect" style="display: none;">
+														<option value="AND" selected="selected">AND</option>
+														<option value="OR">OR</option>
+														<option value="AND NOT">AND NOT</option>
+													</select><span tabindex="0" id="connector2-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="connector2-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 150px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">AND</span></span>
+												</div>
+											</div>
+											<div class="row searchRow">
+												<div class="col-md-6">
+													<span class="formControls">
+														<label class="inputTextLabel" for="searchterms2">Search</label>
+														<input type="text" size="46" maxlength="256" name="searchTerms" id="searchterms2" value="">
+														<button type="button" class="btn btn-link clearButton hidden">
+															<span class="sr-only">Clear Field</span>
+															<span class="ico-delete fontLarge" aria-hidden="true"></span>
+														</button>
+														<div id="suggests_list2" class="suggestions displayNone"></div>
+													</span>
+												</div>
+												<div title="Search Field Type" class="col-md-6">
+													<label class="sr-only" for="fields2-button">search field type for n search terms</label>
+													<select name="fields" id="fields2" class="largeSelect field1" style="display: none;">
+														<option value="ALL">All fields</option>
+														<option value="TITLE_ABS_KEY" selected="selected">Article title, Abstract, Keywords</option>
+														<option value="AUTHOR_NAME">Authors</option>
+														<option value="FIRSTAUTH">First author</option>
+														<option value="SRCTITLE">Source title</option>
+														<option value="TITLE">Article title</option>
+														<option value="ABS">Abstract</option>
+														<option value="KEY">Keywords</option>
+														<option value="AFFIL">Affiliation</option>
+														<option value="AFFILORG">Affiliation name</option>
+														<option value="AFFILCITY">Affiliation city</option>
+														<option value="AFFILCOUNTRY">Affiliation country</option>
+														<option value="LANGUAGE">Language</option>
+														<option value="ISSN">ISSN</option>
+														<option value="CODEN">CODEN</option>
+														<option value="DOI">DOI</option>
+														<option value="REF">References</option>
+														<option value="CONF">Conference</option>
+														<option value="TITLE_ABS_KEY_AUTH">Article title, Abstract, Keywords, Authors</option>
+														<option value="CHEMNAME">Chemical name</option>
+														<option value="CASREGNUMBER">CAS number</option>
+													</select><span tabindex="0" id="fields2-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="fields2-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 325px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">Article title, Abstract, Keywords</span></span>
+													<span class="addRowBtn">
+														<button type="button" onclick="removeSearchField(2)" id="removeId2" data-target="addSearchTerm1" class="btn btn-secondary btn-link deleteRow">
+															<span class="ico-minus" aria-hidden="true"></span>
+															<span class="sr-only">Delete this row</span>
+														</button>
+														<button type="button" onclick="addSearchField()" class="btn btn-secondary btn-link addTermsBtn" data-toggle="tooltip" data-placement="bottom" title="Add additional search terms">
+															<span class="ico-plus icon" aria-hidden="true"></span>
+															<span class="sr-only">Add additional search terms</span>
+														</button>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row formRow searchRow">
+									<div class="col-md-12">
+										<button id="limitDocSearch" type="button" class="btn btn-link" data-toggle="collapse" data-target="#demo" aria-expanded="false">
+											<span class="ico-navigate-right blueText" aria-hidden="true"></span>
+											<span class="btnText">Limit</span>
+										</button>
+									</div>
+								</div>
+								<div class="row searchRow">
+									<div id="demo" class="col-md-12 collapse">
+										<div id="dateRangeDocumentType">
+											<fieldset>
+												<legend>
+													<span class="legendText">
+														Date range (inclusive)
+													</span>
+												</legend>
+												<div class="row">
+													<div class="col-md-12">
+														<input type="radio" name="dateType" value="Publication_Date_Type" id="PubDateType" checked="">
+														<label for="PubDateType" class="radio-label">Published</label>
+														<label class="sr-only" for="yearFrom-button">Published</label>
+														<select id="yearFrom" name="yearFrom" class="mediumSelect" style="display: none;">
+															<option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="Before 1960" selected="selected">All years</option>
+														</select><span tabindex="0" id="yearFrom-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="yearFrom-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 250px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">All years</span></span>
+														<span id="to" class="formTextInlineBlock">to</span>
+														<label class="sr-only" for="yearTo-button">published End Date Range</label>
+														<select id="yearTo" name="yearTo" class="mediumSelect" style="display: none;">
+															<option value="Present">Present</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1960">Before 1960</option>
+														</select><span tabindex="0" id="yearTo-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="yearTo-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 250px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">Present</span></span>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12" id="AddedToScopusInTheLast">
+														<input id="LoadDateType" name="dateType" type="radio" value="Load_Date_Type">
+														<label for="LoadDateType" class="radio-label">Added to Scopus in the last</label>
+														<label class="sr-only" for="loadDate-button"></label>
+														<select id="loadDate" name="loadDate" class="smallSelect" style="display: none;">
+															<option value="7" selected="selected">7 days</option>
+															<option value="14">14 days</option>
+															<option value="30">30 days</option>
+														</select><span tabindex="0" id="loadDate-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="loadDate-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 150px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">7 days</span></span>
+													</div>
+												</div>
+											</fieldset>
+											<fieldset>
+												<legend>
+													<span class="legendText">Document type</span>
+												</legend>
+												<div class="row">
+													<div class="col-md-12">
+														<label class="sr-only" for="docTypeSelect">Published start date range</label>
+														<select id="documenttype" name="documenttype" class="largeSelect" style="display: none;">
+															<option value="All">ALL</option><option value="Article,Review">Article or Review</option><option value="Article">Article</option><option value="Review">Review</option><option value="Article in Press">Article in Press</option><option value="Book,Book Chapter">Book or Book Chapter</option><option value="Book">Book</option><option value="Book Chapter">Book Chapter</option><option value="Article,Conference Paper">Article or Conference Paper</option><option value="Conference Paper">Conference Paper</option><option value="Conference Review">Conference Review</option><option value="Letter">Letter</option><option value="Editorial">Editorial</option><option value="Note">Note</option><option value="Short Survey">Short Survey</option><option value="Business Article,Press Release">Business Article or Press</option><option value="Erratum">Erratum</option>
+														</select><span tabindex="0" id="documenttype-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="documenttype-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" style="width: 325px;"><span class="ui-selectmenu-icon ui-icon btn-primary btn-icon ico-navigate-down"></span><span class="ui-selectmenu-text">ALL</span></span>
+													</div>
+												</div>  
+											</fieldset>
+										</div>
+									</div>
+								</div>
+								<div class="row formRow searchRow">
+									<div class="pull-right">
+										<a href="javascript:resetFormLink()" id="resetFormLink">
+											<span class="btnText">Reset form</span>
+											<input name="resetFormLink" type="hidden">
+										</a>
+										<button type="submit" title="" class="btn btn-primary" onclick="setCheckEmpty(true);" value="">
+											<span class="btnText">Search</span>
+											<span class="ico-search" aria-hidden="true"></span></button>
+										</div>
+									</div>
+								</div>	    		
+								<input id="st1" name="st1" type="hidden" value="">
+								<input id="st2" name="st2" type="hidden" value="">
+								<input id="sot" name="sot" value="b" type="hidden">
+								<input id="sdt" name="sdt" value="b" type="hidden">
+								<input id="sl" name="sl" type="hidden" value=""> 
+								<input id="s" name="s" type="hidden" value="">
+								<input id="sid" name="sid" value="C18449770FD2BDA798EC392A5159A779.wsnAw8kcdt7IPYLO0V48gA:140" type="hidden">
+								<input type="hidden" name="searchId" id="searchId" value="C18449770FD2BDA798EC392A5159A779.wsnAw8kcdt7IPYLO0V48gA:140">  
+								<input id="txGid" name="txGid" value="C18449770FD2BDA798EC392A5159A779.wsnAw8kcdt7IPYLO0V48gA:14" type="hidden">  
+								<input id="sort" name="sort" value="plf-f" type="hidden"> 
+								<input type="hidden" name="originationType" id="originationType" value="b">
+								<input id="rr" name="rr" type="hidden" value="">   	
+							</form>
+						</div>
+					</div>
+					<script language="javascript" type="text/javascript"><!--
+						var clickGo = 'Enter a search query and click Go.';
+						var exampleText ='e.g. #1 AND NOT #3. ';
+						//--></script>
+						<script>
+							var BSGlobalVar = {
+								searchHist : {historyItems : []},
+								searchHistCount : "",
+								searchHistCountText : "",
+								feedTitle : 'Set feed (opens in a new window)',
+								alertTitle : 'Set alert',
+								saveTitle : 'Save query',
+								editTitle : 'Edit query',
+								deleteTitle : 'Delete query',
+								historyDefDispCount : 5,
+								historyCntURL : "../../https@www.scopus.com\search\history\results.uri@origin=searchhistory"
+							}
+							jQuery(document).ready(function(){
+								storedSearchInit();  
+								searchHistoryHover.init();
+								if(jQuery("#confirmMsgContainer,#errorMsgContainer,#warningMsgContainer,#infoMsgContainer,#orcidErrorMsgContainer,#txtZoneInfoMsgContainer,#confirmMsgContainerDiv").length){
+									jQuery('.ariaHidden').focus();
+								}
+							});
+						</script>
+						<a name="history" class="sr-only">&nbsp;</a>
+						<div id="scopusPartnerBubble" class="row">
+							<a href="../ucd/usability.uri" class="learnMore" onclick="logUsage('../ucd/usability.uri','ResourceLink','Resources')" title="Learn more about how to improve Scopus ">
+								<span class="learnMoreText">Learn more about how to </span>
+								<span class="improveScopusText">Improve Scopus</span>
+							</a>
+						</div>
+						<input id="autoSuggestVal" value="false" type="hidden">
+						<input id="randomautoSuggestVal" value="false" type="hidden">
+						<input id="autoSuggestHost" value="scopus-suggest.language-tools.com" type="hidden">
+						<input id="autoSuggestKeyword" value="/keywords.15/" type="hidden">
+						<input id="autoSuggestAuthor" value="/authors.15/" type="hidden">
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>

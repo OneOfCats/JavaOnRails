@@ -1,0 +1,167 @@
+﻿<div class="headerToolbar ">
+	<h1 class="pull-left"> Search for an author or affiliation</h1>
+</div>
+<main role="main">
+	<div id="container" class="popupLayoutContent">
+		<div class="searchContent">
+			<a name="skip1" id="skip1" title="Skip Main Navigation marker"></a>
+			<div class="sectionCnt" id="searchLayout">
+				<div id="erroMsg" style="width: 770px;">
+				</div>
+				<div class="width100 zoomFix" style="min-width: 982px; position: relative; z-index: 1; margin-top: 40px;">
+					<div class="">
+					<form id="authorLookupResultsForm" name="AuthorLookupResultsForm" class="marginT5" focus="st1" action="/project/page04-2" method="post">
+							<input id="origin" name="origin" value="advancedsearchauthorlookup" type="hidden">
+							<input id="poppUp" name="poppUp" value="tt" type="hidden">
+							<input id="activeFlag" name="activeFlag" type="hidden" value="false">
+							<input id="showDocument" name="showDocument" type="hidden" value="false">
+							<input id="details" name="details" type="hidden" value="">
+							<input id="oldResultsPerPage" name="oldResultsPerPage" type="hidden" value="20">
+							<input id="advancedSearchURL" name="advancedSearchURL" type="hidden" value="">
+							<input id="advancedSrchQuery" name="advancedSrchQuery" type="hidden" value="">
+							<input id="endPage" name="endPage" type="hidden" value="">
+							<input id="previousResultCount" name="previousResultCount" type="hidden" value="0">
+							<input id="s" name="s" type="hidden" value="">
+							<input id="selectDeselectAllAttempt" name="selectDeselectAllAttempt" type="hidden" value="">
+							<input id="cc" name="cc" type="hidden" value="10">
+							<input id="cl" name="cl" type="hidden" value="">
+							<input id="contextBox" name="contextBox" type="hidden" value="">
+							<input id="cluster" name="cluster" type="hidden" value="">
+							<input id="connector" name="connector" type="hidden" value="">
+							<input id="sessionSearchId" name="sessionSearchId" type="hidden" value="">
+							<input id="sid" name="sid" type="hidden" value="">
+							<input id="reselectAuthor" name="reselectAuthor" type="hidden" value="false">
+							<input id="queryString" name="queryString" type="hidden" value="">
+							<input id="returnToButtonAvailable" name="returnToButtonAvailable" type="hidden" value="false">
+							<input id="firstPage" name="firstPage" type="hidden" value="">
+							<input id="origQuery" name="origQuery" type="hidden" value="">
+							<input id="origTerm1" name="origTerm1" type="hidden" value="">
+							<input id="origTerm2" name="origTerm2" type="hidden" value="">
+							<input id="partialQuery" name="partialQuery" type="hidden" value="">
+							<input id="previousSelectionCount" name="previousSelectionCount" type="hidden" value="0">
+							<input id="selectedResultsCount" name="selectedResultsCount" type="hidden" value="0">
+							<input id="ignoreTooManyValidation" name="ignoreTooManyValidation" type="hidden" value="">
+							<input id="editAlertReturnFlag" name="editAlertReturnFlag" type="hidden" value="">
+							<input id="authorSearchURL" name="authorSearchURL" type="hidden" value="">    
+							<input id="affilCity" name="affilCity" type="hidden" value="">
+							<input id="affilCntry" name="affilCntry" type="hidden" value="">
+							<input id="clustering" name="clustering" type="hidden" value="">
+							<input id="sortClusterField" name="sortClusterField" type="hidden" value="">
+							<input type="hidden" name="clickedLink">
+							<input id="authSubject" name="authSubject" value="LFSC" type="hidden">
+							<input id="authSubject" name="authSubject" value="HLSC" type="hidden">
+							<input id="authSubject" name="authSubject" value="PHSC" type="hidden">
+							<input id="authSubject" name="authSubject" value="SOSC" type="hidden">
+							<input type="hidden" name="recordid">
+							<input type="hidden" name="displayPerPageFlag" value="f">
+							<input type="hidden" name="sort" value="">
+							<input type="hidden" name="currentSort" value="">
+							<input id="offset" name="offset" type="hidden" value="1">
+							<input id="selectionPageSearch" name="selectionPageSearch" value="asp" type="hidden">
+							<input id="clusterAttributeValue" name="clusterAttributeValue" type="hidden" value="">
+							<div class="sectionCnt" id="searchLayout">
+								<div id="erroMsg" style="width: 770px;">
+								</div>
+								<div class="width100 zoomFix" style="min-width: 982px; position: relative; z-index: 1; margin-top: 40px;">
+									<div class="">
+										<script type="text/javascript">	
+											var allowAffilProfiling = true;
+										</script>
+										<div style="margin: 0 12px;">
+											<input id="editSearch" name="editSearch" value="false" type="hidden">
+											<input id="multSupersededAuth" name="multSupersededAuth" type="hidden" value="">
+											<span class="hidden-label">
+												<a href="#skip2" title="Jump To Refine Results">&nbsp;</a></span>
+												<span class="hidden-label">
+													<a href="#skip3" title="Jump To Results">&nbsp;</a></span>
+													<div class="txtZoneInfoMsgContainer" role="alert">
+														The Scopus Author Identifier assigns a unique number to groups of
+														documents written by the same author via an algorithm that matches
+														authorship based on a certain criteria. If a document cannot be
+														confidently matched with an author identifier, it is grouped separately.
+														In this case, you may see more than 1 entry for the same author.
+													</div>
+													<div id="orcidSelectSearch">
+														<h2 class="txtTitle marginL10">
+															Make Author or Affiliation Selection
+														</h2>
+													</div>
+													<div id="authSelectionSearch" class="searchContainer">
+														<div id="authorsearchBlk" class="searchFieldsectionPopUp">
+															<div class="clear"></div>
+															<div class="floatL&quot;">
+																<div class="searchTable orcidClearValue">
+																	<div class="txtBoxSearch floatL posRelative">
+																		<div class="addBackgroundWhite posRelative">
+																			<input type="text" name="st1" id="st1" class="defaultWaterMark" size="53" maxlength="200" title="Author last name" value="">
+																		</div>
+																	</div>
+																	<div class="txtBoxSearch floatL posRelative">
+																		<div class="addBackgroundWhite posRelative">
+																			<input type="text" name="st2" value="" id="st2" size="20" maxlength="200" class="defaultWaterMark" title="Author first name">
+																		</div>
+																	</div>
+																	<div class="posRelative floatL">
+																		<input type="hidden" value="Search" name="authorSearchButton">
+																		<input name="authorSearchBtn" type="submit" title="Search" value="" class="btnSearch verticalAlignMiddle" id="authorSubmitBtn" onclick="checkAuthOrOrcid(this.form.name);">
+																		<input type="hidden" value="true" name="authorSearch">
+																	</div>
+																</div>
+																<div class="clear"></div>
+																<div class="txtBoxSearch floatL paddingT10 posRelative width100 orcidClearValue">
+																	<div class="posRelative floatL paddingB12">
+																		<div class="addBackgroundWhite posRelative">
+																			<input type="text" name="affilName" size="53" maxlength="200" class="defaultWaterMark" value="" title="Affiliation" id="inst">
+																		</div>
+																	</div>
+																	<div class="showExact floatR">
+																		<span class="custom-checkbox">
+																			<input type="checkbox" id="exactSearch" name="exactAuthorSearch">
+																			<span class="box"><span class="tick"></span></span>
+																		</span>
+																		<label for="exactSearch" class="txtSmaller verticalAlignMiddle">Show exact matches only</label>
+																	</div>
+																</div>
+																<div class="orcidChange posRelative displayInlineBlock">
+																	<div class="orcidContent">
+																		<div class="orcidImage floatL">
+																			<img class="imgSizeSpec" src="../../static/images/orcid_logo.png" title="ORCID provides a persistent digital identifier for an author" alt="">
+																		</div>
+																		<div class="orcidTextField floatL">
+																			<div class="addBackgroundWhite posRelative">
+																				<input type="text" name="orcidId" id="orcidId" onkeypress="setCheckEmpty(true,event,'select',this.form.name)" size="45" maxlength="200" class="defaultWaterMark" style="margin-left:0%" value="" title="">
+																			</div>
+																		</div>
+																		<div class="floatL">
+																			<input type="submit" id="orcidSubmitBtn" title="Search for an author's ORCID ID" value="" class="btnSearch verticalAlignMiddle" onclick="setSelectOrcidEmpty(true);checkTheForm(this.form.name);" alt="">
+																		</div>
+																	</div>
+																</div>
+																<div class="clear"></div>
+																<div>
+																</div>
+															</div>
+															<div id="clusterMessages" class="marginL10">
+															</div>
+															<div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="clearB"></div>
+											</div>
+											<div class="textZonePosition floatL">
+											</div>
+											<div class="clear"></div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="textZonePosition floatL">
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>

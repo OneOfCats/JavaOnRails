@@ -62,7 +62,6 @@ public class Controller {
 			Object data = (Object) CommonHelpers.invokeMethod("getData", this.model);
 			return data;
 		} catch (SecurityException | IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
