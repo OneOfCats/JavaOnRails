@@ -4,7 +4,7 @@
     <groupId>com.khai.httpserver</groupId>
     <artifactId>httpserver</artifactId>
     <packaging>jar</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.2-SNAPSHOT</version>
     <name>HttpServer</name>
     <url>http://maven.apache.org</url>
     <dependencies>
@@ -14,4 +14,16 @@
             <version>2.2.4</version>
         </dependency>
     </dependencies>
+    <description>Alpha version of an MVC framevork with an HTTP server.
+
+Some pages were created from a search engine dump.
+
+To add a new page you have to create:
+- route
+- controller with an action
+- model with a modelData
+- view with an action</description>
+    <organization>
+    	<name>Khai</name>
+    </organization>
 </project>

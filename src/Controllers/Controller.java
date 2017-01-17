@@ -13,7 +13,7 @@ public class Controller {
 	protected String[][] postData;
 	
 	/**
-	 * Controller constructor
+	 * Creates a controller
 	 * @param route proper route from the routes file
 	 * @param headers headers from a request
 	 */
@@ -66,28 +66,6 @@ public class Controller {
 		}
 		return null;
 	}
-	
-	/*
-	protected Object getModelContents(){
-		try {
-			Object data = (Object) CommonHelpers.invokeMethod("getModelContents", this.model);
-			return data;
-		} catch (SecurityException | IllegalArgumentException e) {
-        	System.out.println(e);
-        }
-		return null;
-	}
-	*/
-	
-	/*
-	protected void addModelContents(String content) {
-		try {
-			Object data = (Object) CommonHelpers.invokeMethod("getModelContents", this.model);
-		} catch (SecurityException | IllegalArgumentException e) {
-        	System.out.println(e);
-        }
-	}
-	*/
 	
 	/**
 	 * This method returns a controller name

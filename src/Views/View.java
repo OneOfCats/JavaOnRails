@@ -10,6 +10,11 @@ import java.nio.file.Paths;
 public class View {
 	protected String generatedView;
 	
+	/**
+	 * Creates new View object
+	 * @param content Data object from a model
+	 * @param currentAction is a string with the current action name
+	 */
 	public View(Object content, String currentAction) {
 	}
 	
@@ -50,23 +55,52 @@ public class View {
 		return "";
 	}
 	
+	/**
+	 * generatedView getter
+	 * @return String generated view
+	 */
 	public String getGeneratedView() {
 		return this.generatedView;
 	}
 	
+	/**
+	 * Generates a view name
+	 * @return String view name
+	 */
 	public String getViewName() {
 		String className = this.getClass().getSimpleName();
 		return className.replaceAll("View$", "");
 	}
 	
+	/**
+	 * Wraps a string in a tag
+	 * @param content String to wrap
+	 * @param tag String with a tag to wrap with
+	 * @param className String class name for an element
+	 * @param idName String id name for an element
+	 * @return String wrapped content
+	 */
 	protected String wrapInTag(String content, String tag, String className, String idName) {
 		return "<" + tag + " class=\"" + className + "\" id=\"" + idName + "\">" + content + "</" + tag + ">";
 	}
 	
+	/**
+	 * Wraps a string in a tag
+	 * @param content String to wrap
+	 * @param tag String with a tag to wrap with
+	 * @param className String class name for an element
+	 * @return String wrapped content
+	 */
 	protected String wrapInTag(String content, String tag, String className) {
 		return wrapInTag(content, tag, className, "");
 	}
 	
+	/**
+	 * Wraps a string in a tag
+	 * @param content String to wrap
+	 * @param tag String with a tag to wrap with
+	 * @return String wrapped content
+	 */
 	protected String wrapInTag(String content, String tag) {
 		return wrapInTag(content, tag, "", "");
 	}

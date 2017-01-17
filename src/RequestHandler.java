@@ -87,7 +87,7 @@ public class RequestHandler implements Runnable {
     }
     
     /**
-     * This method makes a response to a user
+     * This method makes a 404 response to a user
      */
     private void writeResponse404() throws Throwable {
         String response = "HTTP/1.1 404 Not Found\r\n" +
@@ -126,6 +126,12 @@ public class RequestHandler implements Runnable {
     	return var;
     }
     
+    /**
+	 * Reads a body of an HTTP request
+	 * @param contentLength int, symbols amount in a body
+	 * @param br BufferedReader from which to read
+	 * @return String parsed HTTP body
+	 */
     private String readInputBody(int contentLength, BufferedReader br) {
     	String body = "";
     	try {
@@ -138,6 +144,11 @@ public class RequestHandler implements Runnable {
     	return body;
     }
     
+    /**
+	 * Parses a content-length value from an HTTP header
+	 * @param headers String with an HTTP request
+	 * @return int content-length value
+	 */
     private int getContentLength(String headers) {
     	int begin = headers.indexOf("Content-Length") + 16;
     	int end = headers.indexOf('\n', begin);

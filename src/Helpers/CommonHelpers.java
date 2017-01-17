@@ -23,6 +23,11 @@ public class CommonHelpers {
 		return null;
 	}
 	
+	/**
+	 * Creates an instance of the specified class
+	 * @param className a name of the class
+	 * @return Object of this class
+	 */
 	public static Object createClassInstance(String className) {
 		try {
 			Class requestedClass = Class.forName(className);
