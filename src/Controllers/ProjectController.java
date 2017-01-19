@@ -48,7 +48,7 @@ public class ProjectController extends Controller {
 	 * @return String with a generated view
 	 */
 	public String create() {
-		this.projectModel.addProject(this.postData[2][1], this.postData[0][1], this.postData[1][1]);
+		this.projectModel.addProject(this.postData[2][1], this.postData[0][1], this.postData[1][1], this.postData[3][1]);
 		this.projectModel.save();
 		return this.response = redirectTo("index");
 	}
@@ -84,7 +84,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page01_2post() {
 		postDataToConsole();
-		return this.response = redirectTo("page01_2");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -101,7 +101,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page02post() {
 		postDataToConsole();
-		return this.response = redirectTo("page02");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -118,7 +118,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page03post() {
 		postDataToConsole();
-		return this.response = redirectTo("page03");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -135,7 +135,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page03_2post() {
 		postDataToConsole();
-		return this.response = redirectTo("page03_2");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -152,7 +152,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page04post() {
 		postDataToConsole();
-		return this.response = redirectTo("page04");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -169,7 +169,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page04_2post() {
 		postDataToConsole();
-		return this.response = redirectTo("page04_2");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -203,7 +203,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page06post() {
 		postDataToConsole();
-		return this.response = redirectTo("page06");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -220,7 +220,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page07post() {
 		postDataToConsole();
-		return this.response = redirectTo("page07");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -237,7 +237,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page07_2post() {
 		postDataToConsole();
-		return this.response = redirectTo("page07_2");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -254,7 +254,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page07_3post() {
 		postDataToConsole();
-		return this.response = redirectTo("page07_3");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -271,7 +271,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page08post() {
 		postDataToConsole();
-		return this.response = redirectTo("page08");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -288,7 +288,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page08_2post() {
 		postDataToConsole();
-		return this.response = redirectTo("page08_2");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -305,7 +305,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page09post() {
 		postDataToConsole();
-		return this.response = redirectTo("page09");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -322,7 +322,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page09_2post() {
 		postDataToConsole();
-		return this.response = redirectTo("page09_2");
+		return this.response = redirectTo("page05");
 	}
 	
 	/**
@@ -339,7 +339,7 @@ public class ProjectController extends Controller {
 	 */
 	public String page10post() {
 		postDataToConsole();
-		return this.response = redirectTo("page10");
+		return this.response = redirectTo("page5");
 	}
 	
 	/**
@@ -356,6 +356,6 @@ public class ProjectController extends Controller {
 	 */
 	public String page10_2post() {
 		postDataToConsole();
-		return this.response = redirectTo("page10_2");
+		return this.response = redirectTo("page5");
 	}
 }

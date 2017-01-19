@@ -7,7 +7,8 @@ public class ProjectData {
 	
 	public class ProjectDataItem {
 		public String title;
-		public String firstName;
-		public String lastName;
+		public String names;
+		public String year;
+		public String source;
 	}
 }

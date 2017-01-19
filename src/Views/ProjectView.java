@@ -47,9 +47,10 @@ public class ProjectView extends View {
 				a("/", "back") +
 				div(
 						form("/project/add", 
-							span("First Name: ") + input("text", "firstName") + br() +
-							span("Second Name: ") + input("text", "secondName") + br() +
-							span("Project: ") + input("text", "projectTitle") + br() +
+							span("Names: ") + input("text", "names") + br() +
+							span("Year: ") + input("text", "year") + br() +
+							span("Project: ") + input("text", "title") + br() +
+							span("Source: ") + input("text", "source") + br() +
 							input("submit", "projectTitle")
 						)
 				);
@@ -65,8 +66,9 @@ public class ProjectView extends View {
 		for (ProjectDataItem item : this.content.projects) {
 			result += 
 			div(
-					span("First Name: ") + span(item.firstName) + br() +
-					span("Second Name: ") + span(item.lastName) + br() +
+					span("First Name: ") + span(item.names) + br() +
+					span("Second Name: ") + span(item.source) + br() +
+					span("Second Name: ") + span(item.year) + br() +
 					span("Project: ") + span(item.title) + br() + br()
 			);
 		}
@@ -171,11 +173,33 @@ public class ProjectView extends View {
 	 */
 	public String page05() {
 		try {
-			return readFile("src/Views/Project/" + "page05" + ".html", Charset.forName("UTF-8"));
+			String page = readFile("src/Views/Project/" + "page05" + ".html", Charset.forName("UTF-8"));
+			return page.replaceAll("<java-data>", searchResults());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return "";
+	}
+	
+	private String searchResults() {
+		String result = "";
+		String template = "<java-data-title><java-data-names><java-data-year><java-data-source>";
+		try {
+			template = readFile("src/Views/Project/" + "page05_lineitem" + ".html", Charset.forName("UTF-8"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		for (int i = 0; i < this.content.projects.size(); i++) {
+			String inner = template;
+			inner = inner.replaceAll("<java-data-title>", a("", this.content.projects.get(i).title));
+			inner = inner.replaceAll("<java-data-names>", a("", this.content.projects.get(i).names));
+			inner = inner.replaceAll("<java-data-year>", this.content.projects.get(i).year);
+			inner = inner.replaceAll("<java-data-source>", a("", this.content.projects.get(i).source));
+			inner = inner.replaceAll("<java-data-iteration>", Integer.toString(i + 1));
+			result += inner;
+		}
+		
+		return result;
 	}
 	
 	/**

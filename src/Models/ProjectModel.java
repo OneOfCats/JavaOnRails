@@ -18,11 +18,12 @@ public class ProjectModel extends Model {
 	 * @param lastName String with a last name
 	 * @return boolean a result of adding the record to the ProjectData
 	 */
-	public boolean addProject(String title, String firstName, String lastName) {
+	public boolean addProject(String title, String names, String year, String source) {
 		ProjectData.ProjectDataItem pdi = this.modelData.new ProjectDataItem();
 		pdi.title = title;
-		pdi.firstName = firstName;
-		pdi.lastName = lastName;
+		pdi.names = names;
+		pdi.year = year;
+		pdi.source = source;
 		return this.modelData.projects.add(pdi);
 	}
 	
