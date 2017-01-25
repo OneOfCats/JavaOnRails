@@ -1,0 +1,1869 @@
+/*******************************
+Global Style
+
+Index:
+    01. Reset
+    02. Global Settings for
+    	Common HTML elements
+    03. Global Settings for
+    	Common HTML classes
+*******************************/
+
+/******************************
+    01. Reset
+******************************/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+fieldset,img {
+	border:0;
+}
+
+address,caption,cite,code,dfn,th,var {
+	font-style: normal;
+	font-weight:normal;
+}
+
+ul, ol, li, dl, dt, dd {
+	list-style:none;
+}
+
+caption,th {
+	text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+
+q:before,q:after {
+	content:'';
+}
+
+abbr,acronym {
+	border: 0;
+	font-variant: normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+	vertical-align: text-top;
+}
+sub {
+	vertical-align: text-bottom;
+}
+input,textarea,select{
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0;
+	padding: 0;
+}
+/*because legend doesn't inherit in IE */
+legend{color: #000; padding: 0;}
+a img, iframe { border: none; }
+
+/******************************
+    02. Global Settings for
+    	Common HTML elements
+*******************************/
+html {
+    font-family: Helvetica, sans-serif;
+}
+/*Japanese charset support*/
+html[lang="ja-JP"],
+html[lang="ja-JP"] input, html[lang="ja-JP"] textarea, html[lang="ja-JP"] select {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", "MS PGothic", "MS Pゴシック", Helvetica, Arial, sans-serif;
+}
+body { 
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.2;
+    text-align: left;
+    color: #333333;	/* #192432; */
+}
+
+h1 { /* Page Title */
+    font-family: Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: uppercase;
+    color: #333333;	/* #192432; */
+}
+
+h2 { /* Section Header */
+    font-family: Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: left;
+    color: #333333;	/* #192432; */
+}
+
+h3 { /* Box/Container Title */
+	font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: left;
+    color: #333333;	/* #192432; */
+}
+
+h3 a { /* Box/Container Title[Link] */
+	font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: left;
+    text-decoration: none;
+    color: #104284;
+}
+
+h4 {
+	font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: left;
+    text-decoration: none;
+    color: #333333;	/* #192432; */
+}
+
+p {
+    line-height: 1.2;
+    margin-bottom: 2px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+a, a:link, a:visited {
+	color: #104284;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #165BB3;
+    text-decoration: underline;
+}
+
+button, input[type="reset"], input[type="button"], input[type="submit"] {
+	background-color: #535353;
+    color: #FFFFFF;
+	border: 0 solid #535353;
+    padding: 4px;
+    margin-right: 6px;
+    cursor: pointer;	/* default; */
+    font: normal normal bold 12px/1.5 Helvetica, sans-serif;
+	-moz-appearance: none;
+    -moz-binding: none;
+    -moz-box-sizing: none;
+    -moz-user-select: none;
+}
+
+button:hover, input[type="reset"]:hover, input[type="buttton"]:hover, input[type="submit"]:hover {
+	background-color: #165BB3;
+}
+
+input, textarea, select, .rn_FileAttachmentUpload2 input[type="file"] {
+	border: 1px inset #666666;
+}
+
+input[type="radio"], input[type="check"] {
+	border: 0px inset #666666;
+}
+
+/******************************
+    03. Global Settings for
+    	Common HTML classes
+*******************************/
+.rn_FloatLeft {
+    float: left;
+}
+
+.rn_FloatRight {
+    float: right;
+}
+
+.rn_Elsevier .clear {
+	clear: both;
+    max-height: 0;
+    max-width: 0;
+    min-height: 0;
+    min-width: 0;
+    display: block;
+}
+
+/*.rn_Hidden {
+	display: none;
+} */
+
+.rn_Elsevier .rn_HintBox, .rn_Elsevier .rn_TextInput .rn_HintBox, .rn_Elsevier .rn_SelectionInput .rn_HintBox {
+	position: absolute;
+    background: repeat scroll 0 0  FFFFFF;
+    border: 1px dotted #999999;
+    min-width:214px;
+	max-width: 214px;
+	padding: 4px 16px 2px;
+	word-wrap: break-word;
+}
+
+.rn_Elsevier .rn_TextInput, .rn_Elsevier .rn_SelectionInput, .rn_Elsevier .rn_ACProductSelection, .rn_Elsevier .rn_FileAttachmentUpload2, .rn_Elsevier .rn_ProductCategoryInput,
+.rn_Elsevier .rn_ChatLaunchButton,
+.rn_Elsevier .rn_SmartAssistantDialog {
+	margin-bottom: 10px;	/* 22px; */
+}
+
+.rn_Elsevier .rn_ProductCategoryInput .ygtvblankdepthcell, .rn_Elsevier .rn_ProductCategoryInput .ygtvtn, .rn_Elsevier .rn_ProductCategoryInput .ygtvln {
+	width: 0;
+}
+
+#rn_SocietyMember .rn_SelectionInput {
+	position: inherit;
+}
+
+.rn_Elsevier .rn_TextInput .rn_Label, .rn_Elsevier .rn_SelectionInput .rn_Label, .rn_Elsevier .rn_FileAttachmentUpload2 label, .rn_Elsevier .rn_ACProductSelection .rn_Label, .rn_Elsevier .rn_ProductCategoryInput .rn_Label {
+	color: #000000;		/*#666666;*/
+	font-weight: bold;
+	margin-bottom: 4px;	/* 7px; */
+	display: block;
+}
+
+#rn_QuestionInput .rn_TextInput label.rn_Label, #rn_QuestionInput .rn_TextInput label.rn_Required {
+	display: none;
+}
+/* no more differences for mendatory labels 
+.rn_TextInput .rn_Required, .rn_SelectionInput .rn_Required, .rn_ProductCategoryInput .rn_Required {
+	color: #000000;
+	margin-bottom: 10px;
+}
+*/
+div.rn_RequiredHint {
+	clear: both;
+/*	background: url("../images/layout/bg_diagonal.png") repeat scroll 0 0 #E2DDDD;	*/
+    color: #666666;
+/*	font-weight: bold;	*/
+	margin: 12px 0;
+	padding: 10px;
+}
+
+#rn_QuestionSubmit p span.rn_Required, .rn_RequiredHint p span.rn_Required {
+	color: #FF0000;
+	font-weight: bold;
+}
+
+.rn_Elsevier .rn_TextInput span.rn_Required, .rn_Elsevier .rn_SelectionInput span.rn_Required, .rn_Elsevier .rn_ProductCategoryInput span.rn_Required,
+.rn_Elsevier .rn_TextInput .rn_ErrorLabel, .rn_Elsevier .rn_SelectionInput .rn_ErrorLabel, .rn_Elsevier .rn_ProductCategoryInput .rn_ErrorLabel,
+.rn_Elsevier .rn_ACProductSelection .rn_ErrorLabel, .rn_Elsevier .rn_ACProductSelection .rn_ProductSelectionListErrorMsg {
+	color: #FF0000;
+}
+
+.rn_Elsevier .rn_ProductCategoryInput .rn_RequiredLabel {
+	display: none;
+}
+
+.rn_Elsevier .rn_TextInput .rn_ErrorField, .rn_Elsevier .rn_SelectionInput .rn_ErrorField, .rn_Elsevier .rn_ProductCategoryInput .rn_ErrorField {
+	background-color: #FBEEEE;
+}
+
+a.rn_HintIcon {
+	cursor: default;
+	position: inherit;
+	float: right;
+}
+
+.rn_TextInput a.rn_HintIcon, .rn_ACProductSelection a.rn_HintIcon {
+	margin-top: 2px;
+}
+
+.rn_ProductCategoryInput a.rn_HintIcon, .rn_SelectionInput a.rn_HintIcon {
+	margin-top: 4px;
+}
+
+.rn_Elsevier .rn_ProductCategoryInput .rn_Label {
+	width: 100%;
+}
+
+/******************************
+    04. Template Structure:
+    rn_Container
+        rn_Header
+        	rn_SearchControls
+			rn_SearchControlsNoCat
+        rn_Body
+        rn_Footer
+            rn_RightNowCredit
+******************************/
+#rn_Container {
+    height: 100%;
+/*	padding: 0 20px;	*/
+    overflow: visible;
+    text-align: left;
+    width: 740px;
+}
+
+#rn_Header {
+	background: repeat scroll 0 0  #DEDEDE;
+    height: 60px;
+    min-height: 30px;
+    max-height: 30px;
+    overflow: visible;
+    padding: 20px;
+}
+
+#rn_Header #rn_SearchControls  {
+    height: 30px;
+    width: 390px;
+}
+
+	#rn_SearchControls   .rn_SearchInput {
+		float: left;
+		width: 360px;
+	}
+	
+	#rn_SearchControls  .KeywordText input.searchText {
+		color: #999999;
+		background: url("../images/icons/iframe_rnsearchinput.png") no-repeat scroll 0 0 transparent;
+		height: 30px;
+	    width: 100%;
+	    padding-left: 5px;
+	    border-style: none;	/*inset none inset inset;*/
+	    
+	}
+	
+		/* IE7 Hack */
+	* + html #rn_SearchControls  .KeywordText input.searchText {
+		padding-top: 7px;
+		height: 23px; 
+	}
+	/* END IE7 Hack */
+	/* IE8 Hack !does not use valid CSS! */
+	@media \0screen {
+		#rn_SearchControls  .KeywordText input.searchText {
+			padding-top: 7px;
+			height: 23px; 
+		}
+	}
+	/* END IE8 Hack */
+	
+	#rn_SearchControls  .rn_SearchButton2 {
+		width: 30px;
+		height: 30px;
+	}
+	
+	 #rn_SearchControls  .rn_SearchButton2 input.rn_SubmitImage {
+	/*	background-color: #FFFFFF;	/*#F0F0F0; */
+		background: url("../images/icons/iframe_rnsearchbutton.png") no-repeat scroll 0 0 transparent;
+	    border-color: #666666;
+	    border-style: none;			/*inset inset inset none;*/
+	    border-width: 1px 1px 1px 0;
+	    float: left;
+	    padding: 6px;
+	    margin: 0;
+	    vertical-align: middle;
+		positon:relative;
+		z-index: ="1"
+	} 
+	
+	
+	
+	/* IE7 Hack */
+	* + html #rn_SearchControls  .rn_SearchButton2 input.rn_SubmitImage {
+		margin-top: 1px;
+	}
+	/* END IE7 Hack */
+	/* for google Chrome: don´t highlight the focus on Search Input because the Search Button is another second input so that highlighting looks like a failure */ 
+	#rn_SearchControls  .KeywordText input.searchText:focus, #rn_SearchControls .rn_SearchButton2 input.rn_SubmitImage:focus {
+	    outline: none;
+	}
+
+
+/* setup for no category search controls (copies standard search) */
+
+#rn_Header #rn_SearchControlsNonCat {
+    height: 30px;
+    width: 390px;
+}
+
+	#rn_SearchControlsNonCatt  .rn_SearchInput {
+		float: left;
+		width: 360px;
+	}
+	
+	#rn_SearchControlsNonCat .KeywordText input.searchText {
+		color: #999999;
+		background: url("../images/icons/iframe_rnsearchinput.png") no-repeat scroll 0 0 transparent;
+		height: 30px;
+	    width: 100%;
+	    padding-left: 5px;
+	    border-style: none;	/*inset none inset inset;*/
+	    
+	}
+	
+		/* IE7 Hack */
+	* + html #rn_SearchControlsNonCat .KeywordText input.searchText {
+		padding-top: 7px;
+		height: 23px; 
+	}
+	/* END IE7 Hack */
+	/* IE8 Hack !does not use valid CSS! */
+	@media \0screen {
+		#rn_SearchControlsNonCat .KeywordText input.searchText {
+			padding-top: 7px;
+			height: 23px; 
+		}
+	}
+	/* END IE8 Hack */
+	
+	#rn_SearchControlsNonCat .rn_SearchButton2 {
+		width: 30px;
+		height: 30px;
+	}
+	
+	 #rn_SearchControlsNonCat .rn_SearchButton2 input.rn_SubmitImage {
+	/*	background-color: #FFFFFF;	/*#F0F0F0; */
+		background: url("../images/icons/iframe_rnsearchbutton.png") no-repeat scroll 0 0 transparent;
+	    border-color: #666666;
+	    border-style: none;			/*inset inset inset none;*/
+	    border-width: 1px 1px 1px 0;
+	    float: left;
+	    padding: 6px;
+	    margin: 0;
+	    vertical-align: middle;
+		positon:relative;
+		z-index: ="1"
+	} 
+	
+	
+	
+	/* IE7 Hack */
+	* + html #rn_SearchControlsNonCat .rn_SearchButton2 input.rn_SubmitImage {
+		margin-top: 1px;
+	}
+	/* END IE7 Hack */
+	/* for google Chrome: don´t highlight the focus on Search Input because the Search Button is another second input so that highlighting looks like a failure */ 
+	#rn_SearchControlsNonCat .KeywordText input.searchText:focus, #rn_SearchControls .rn_SearchButton2 input.rn_SubmitImage:focus {
+	    outline: none;
+	}
+
+
+
+
+#rn_Header #rn_ContactUs {
+/*	position: relative;
+    right: 20px;
+    top: 15px;
+	min-width: 220px; */
+}
+
+	#rn_ContactUS #rn_ContactMenuLBL {
+		max-width: 80px;
+    	padding: 5px 10px;
+	}
+	
+	#rn_ContactUs #rn_ContactMenuLBL span {
+		display: block;
+    	margin: 5px 0;
+    	font-weight: bold;
+	}
+
+#rn_ContactMenu .rn_Contact {
+	    margin: 0 1px;
+	    max-height: 25px;
+	    max-width: 40px;
+	    min-height: 25px;
+	    min-width: 40px;
+	}
+	
+	#rn_ContactMenu .rn_Contact a {
+    	margin-right: 0px;
+    	padding: 0px;
+    	max-height: 25px;
+	    max-width: 40px;
+	    min-height: 25px;
+	    min-width: 40px;
+	    display: block;
+	}
+	
+	#rn_EmailUs.rn_Contact a {
+	    background: url("../images/icons/iframe_rncontactsprite.png") no-repeat scroll 1px center transparent;
+	}
+/*	#rn_EmailUs.rn_Contact a {
+	    background: url("../images/icons/myelsrncontactsprite.png") no-repeat scroll 2px 5px transparent;
+	}
+	
+	#rn_EmailUs.rn_Contact a.rn_SelectedTab {
+	    background: url("../images/icons/myelsrncontactsprite.png") no-repeat scroll -34px 5px #165BB3;
+	}
+*/
+	#rn_PhoneUs.rn_Contact a {
+	    background: url("../images/icons/iframe_rncontactsprite.png") no-repeat scroll -40px center transparent;
+	}	
+/*	#rn_PhoneUs.rn_Contact a {
+	    background: url("../images/icons/myelsrncontactsprite.png") no-repeat scroll 2px -24px transparent;
+	}
+	
+	#rn_PhoneUs.rn_Contact a.rn_SelectedTab {
+	    background: url("../images/icons/myelsrncontactsprite.png") no-repeat scroll -34px -24px #165BB3;
+	}
+*/	
+	#rn_ChatUs.rn_Contact a {
+	    background: url("../images/icons/iframe_rncontactsprite.png") no-repeat scroll -80px center transparent;
+	}
+/*	#rn_ChatUs.rn_Contact a {
+	    background: url("../images/icons/myelsrncontactsprite.png") no-repeat scroll 2px -51px transparent;
+	}
+	
+	#rn_ChatUs.rn_Contact a.rn_SelectedTab {
+	    background: url("../images/icons/myelsrncontactsprite.png") no-repeat scroll -34px -51px #165BB3;
+	}	
+*/	
+
+#rn_Body, #rn_Footer {
+	padding: 0 20px;
+}
+
+/* #rn_Footer: */
+	#rn_ElsevierCredit {
+		margin-top: 20px;
+	}
+	
+	#rn_ElsevierCredit .rn_Address {
+		padding: 20px 0;
+	}
+/******************************
+    05. Page Structure:
+    rn_LeftNavBar
+	rn_MainColumn
+		rn_PageTitle
+		rn_PageContent
+******************************/
+
+#rn_LeftNavBar{
+	height: auto;
+	width: 220px;
+}
+
+	#rn_LeftNavBar  #rn_ButtonWrap {
+		margin: 20px 0 0 15px;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList {
+	    width: 90%;
+	    background: none repeat scroll 0 0 transparent;
+		border-top: 1px solid #E0E0E0;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_LastCategory {
+		border-bottom: 1px solid #E0E0E0;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList div.rn_SelectedCategory {
+		border-top: 1px solid #4C4E53;
+		border-bottom:  1px solid #4C4E53; 
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList div.rn_NextToSelectedCat {
+		border-top: 0 solid #E0E0E0;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList.rn_FloatLeft, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList.rn_FloatRight {
+	    float: left;
+	    padding: 0;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList h3 {
+	    background: url("../images/layout/arrow.png") no-repeat scroll 0 9px transparent;
+	    color: #333333;
+	    font-size: 12px;
+	    margin: 0;
+    	padding: 4px 12px;
+    	border-bottom: 0 solid #CCCCCC;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_SelectedCategory h3 {
+	    background: url("../images/layout/arrow.png") no-repeat scroll 0 -44px transparent;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList h3.rn_EmptyTopLvlCat, #rn_LeftNavBar .rn_ProductCategoryList .rn_SelectedCategory h3.rn_EmptyTopLvlCat {
+	    background: none no-repeat scroll 0 0 transparent;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList_0 h3 {
+		background: none no-repeat scroll 0 0 transparent;
+		padding: 4px 20px 4px 0;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList h3 a, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList h3 a:link, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList h3 a:visited {
+		color: #666666;	/* #333333;	*/
+		font-size: 12px;	
+	/*	font-weight: bold;	*/
+	    text-decoration: none;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList_0 h3 a, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList_0 h3 a:link, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList_0 h3 a:visited {
+		font-size: 15px;
+	}
+	
+	#rn_LeftNavBar   .rn_ProductCategoryList .rn_HierList .rn_AnswersCount {
+		display: block;
+		width: 18%;
+		color: #666666;
+		font-size: 12px;
+		font-weight: normal;
+		text-align: right;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList li .rn_AnswersCount {
+		font-size: 10px;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList.rn_SelectedCategory h3 span,
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList li.rn_SelectedCategory span {
+		color: #333333;
+		font-weight: bold;
+	    text-decoration: none;
+	}
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList.rn_SelectedCategory h3 span.rn_SelectedCategory,
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList li.rn_SelectedCategory span.rn_CategoryLabel {
+	    width: 80%;
+	}
+	
+	.rn_ProductCategoryList .rn_HierList ul {
+		display: none;
+	}
+	
+	.rn_ProductCategoryList .rn_SelectedCategory ul {
+		display: block;
+	}
+	
+	.rn_Elsevier .rn_ProductCategoryList .rn_HierList li {
+	    display: block;
+	    overflow: hidden;
+	    margin: 0;
+	    padding: 4px 12px 4px 25px;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList li a, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList li a:link, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList li a:visited {
+		display: block;
+		color: #666666;
+		width: 80%;
+	}
+	
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList h3 a:hover, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList h3 a:active, 
+	#rn_LeftNavBar  .rn_ProductCategoryList .rn_HierList li a:hover, #rn_LeftNavBar .rn_ProductCategoryList .rn_HierList li a:active {
+		color: #165BB3;
+	    text-decoration: none;
+	}
+	
+#rn_AllCol{
+	width: 740px;
+}
+
+#rn_MainColumn {
+	height: 440;
+	padding: 20px 0 10px;
+	width: 740px;
+}
+
+#rn_MainColumn.rn_FloatRight {
+	width: auto;
+	float:none;
+}
+
+#rn_MainColumn.rn_AskQuestion, #rn_MainColumn.rn_LiveHelp {
+	width: 540px;
+}
+
+#rn_PageTitle.rn_AnswerDetail {
+	border-bottom: 1px solid #CCCCCC;
+	
+}
+	
+	#rn_PageTitle.rn_AnswerDetail .rn_LeftCol {
+		width: 70%;
+	}
+
+	#rn_PageTitle.rn_AnswerDetail #rn_AnswersNavigation.rn_RightCol {
+		width: 30%;
+	}
+		
+		#rn_AnswersNavigation div {
+			float: right;
+		}	
+			.rn_AnswerNavButtons a, .rn_AnswerNavButtons div {
+			    background-color: #192432;
+			    color: #FFFFFF;
+			    font-weight: bold;
+			    text-align: center;
+			    margin: 0 0 0 6px;	/*	0 4px;	*/
+			    padding: 4px 10px;	/* 6px 10px;*/
+			    display: block;
+			    min-width: 70px;	/* 100px; */
+			    max-width: 70px;	/* 100px; */
+			    white-space: nowrap;
+			    overflow: hidden;
+			}
+			
+			.rn_AnswerNavButtons a:hover, .rn_AnswerNavButtons a:active {
+			    background-color: #165BB3;
+			    text-decoration: none;
+			}
+			
+			#rn_AnswersNavigation .rn_AnswerNavButtons {
+				float: left;
+			}
+			
+			#rn_AnswersNavigation .rn_AnswerNavButtons div.rn_Disabled {
+			    background-color: #D0D7E0;
+			}
+	
+	.rn_ButtonWrap.rn_BackListNav {
+		padding: 0 20px 10px 0;
+	}
+	
+	.rn_ButtonWrap.rn_BackListNav a {
+		background: url("../images/layout/iframe_rnbacktolist.png") no-repeat scroll 0px center transparent;
+	    color: #314775;
+	    font-size: 14px;
+	    font-weight: bold;
+	    padding-left: 9px;
+	    margin-left: 5px;
+	}
+	
+	#rn_PageTitle.rn_AnswerDetail h2, {
+		font-size: 20px;
+		border-bottom: 0 solid transparent;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#rn_PageTitle.rn_AskQuestion h2, #rn_PageTitle.rn_LiveHelp h2 {
+		font-size: 30px;
+	}
+	
+	#rn_PageContent {
+	    padding: 15px 0;
+	}
+	
+	#rn_MainColumn #rn_PageContent.rn_AskQuestion, #rn_MainColumn #rn_PageContent.rn_LiveHelp {
+		background: repeat scroll 0 0  #DEDEDE;
+	    padding: 25px 20px;
+	}
+	
+	#rn_MainColumn #rn_PageContent.rn_Message {
+	    margin-left: 20px;
+	    width: 520px;
+	}
+
+.rn_LeftCol, .rn_RightCol {
+	width: 49%;
+}
+
+#rn_ErrorLocation.rn_ErrorMessage {
+/*	background: url("../images/layout/bg_diagonal.png") repeat scroll 0 0 #E2DDDD;
+	padding: 8px 10px;
+*/	margin-bottom: 20px;
+}
+
+#rn_ErrorLocation.rn_ErrorMessage div {
+	padding: 2px 0;
+	display: none;
+}
+
+#rn_ErrorLocation.rn_ErrorMessage div.rn_ErrorHeader {
+	padding: 2px 0;
+	display: block;
+	color: #FF0000;
+}
+
+#rn_CallBackHint span {
+    color: #666666;
+}
+
+#rn_AskQuestionForm .rn_QuestionSection, .ChatForm .rn_QuestionSection {
+	margin-bottom: 10px;
+}
+
+#rn_AskQuestionForm .rn_QuestionSection div.rn_QuestionSectionHeader, #rn_AskQuestionForm .rn_QuestionSection div.rn_HintOutput,
+.ChatForm .rn_QuestionSection div.rn_QuestionSectionHeader, .ChatForm .rn_QuestionSection div.rn_HintOutput {
+	border-top: 1px dotted #999999;
+	margin-bottom: 10px;
+}
+
+#rn_AskQuestionForm #rn_ContactDetails div.rn_QuestionSectionHeader, .ChatForm #rn_ContactDetails div.rn_QuestionSectionHeader {
+	border-top: 0 dotted #CCCCCC;
+}
+
+#rn_AskQuestionForm .rn_QuestionSection div h3, .ChatForm .rn_QuestionSection div h3 {
+	color: #666666;
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+#rn_ContactDetails div h3 {
+	padding-top: 0;
+}
+
+#rn_ContactName, #rn_ContactDetails .rn_Phone, .rn_Label, #rn_RequiredInput .rn_RadioInput {
+	width: 91%;
+}
+
+.rn_Elsevier .rn_TextInput .rn_Text, .rn_Elsevier .rn_TextInput .rn_Password,
+.rn_Elsevier .rn_ACProductSelection .rn_ProductSelectionInput, .rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-content,
+.rn_Elsevier .rn_SelectionInput select,
+.rn_Elsevier .rn_ProductCategoryInput button.rn_DisplayButton {
+	height: 18px;
+	min-width: 91%;	/*	min-width: 49%;	*/
+	max-width: 91%;	/*	max-width: 49%;	*/
+	width: 91%;		/* width: 49%;*/
+/*	color: #666666;	*/
+}
+
+/* IE8 Hack !does not use valid CSS! */
+@media \0screen {
+	.rn_Elsevier .rn_SelectionInput select,
+	.rn_Elsevier .rn_ProductCategoryInput button.rn_DisplayButton {
+		min-width: 87%;
+		max-width: 87%;
+		width: 87%;
+	}
+}
+/* END IE8 Hack */
+
+#rn_ContactName .rn_Label, #rn_ContactName .rn_TextInput .rn_Text {
+	min-width: 100%;
+	max-width: 100%;
+	width: 100%;
+}
+
+.rn_FileAttachmentUpload2 input[type="file"] {
+	background-color: #FFFFFF; /* used for google chrome */
+	height: 21px;
+	color: #666666;
+}
+
+.rn_Elsevier .rn_SelectionInput select {
+	height: 23px;
+    cursor: default;
+/*	font-weight: bold;	*/
+    padding: 2px 4px;
+}
+
+	.rn_Elsevier .rn_SelectionInput select option {
+		min-width: 190px;
+		max-width: 190px;
+		width: 190px;
+		padding: 0 8px;
+	}
+
+.rn_Elsevier .rn_ProductCategoryInput button.rn_DisplayButton {
+	height: 23px;
+	border: 1px inset #666666;
+    cursor: default;
+/*	font-weight: bold; */
+    padding: 2px 4px;
+    display: inline;
+}
+
+.rn_Elsevier .rn_ProductCategoryInput button.rn_DisplayButton span span {
+	display: block;
+	max-width: 94%;
+    min-width: 94%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* IE7 Hack */
+* + html .rn_Elsevier .rn_TextInput .rn_Text, * + html .rn_Elsevier .rn_TextInput .rn_Password,
+* + html .rn_Elsevier .rn_ACProductSelection .rn_ProductSelectionInput, * + html .rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-content,
+* + html .rn_Elsevier .rn_SelectionInput select,
+* + html .rn_Elsevier .rn_ProductCategoryInput button.rn_DisplayButton,
+* + html .rn_Elsevier .rn_RadioInput {
+	float: left;
+}
+
+* + html .rn_Elsevier .rn_HintBox, * + html .rn_Elsevier .rn_TextInput .rn_HintBox, * + html .rn_Elsevier .rn_SelectionInput .rn_HintBox {
+	clear: both;
+	display: block;
+}
+
+.rn_HintBox {
+	background: repeat scroll 0 0 #DCDCDC;
+}
+
+* + html .rn_Elsevier .rn_ProductCategoryInput button.rn_DisplayButton {
+	line-height: 1.3;
+}
+
+* + html .rn_Elsevier .rn_ProductCategoryInput button.rn_DisplayButton span span {
+	max-width: 89%;
+    min-width: 89%;
+}
+/* END IE7 Hack */
+
+.rn_Elsevier .rn_ProductCategoryInput .rn_Panel {
+	clear: both;
+    position: absolute;
+    width: 209px;
+}
+
+/* the prefix field and input field for the telephone number */
+#rn_ContactDetails div.rn_Prefix {
+	float: left;
+	width: 14%;
+    padding: 3px 4px 0 0;
+    font-weight: bold;
+    text-align: right;
+    color: #000000;	/* #666666; */
+}
+
+.rn_Elsevier #rn_ContactDetails .rn_Phone input.rn_Text {
+    min-width: 83%;
+	max-width: 83%;
+    width: 83%;
+}
+/* END prefix field and input field for the telephone number */
+
+.rn_HintOutput {
+	margin-bottom: 10px;
+}
+
+#rn_HelpInstruction .rn_LeftCol span {
+    display: block;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #000000;
+}
+
+#rn_RequiredInput .rn_RightCol span {
+/*	background: url("../images/layout/bg_diagonal.png") repeat scroll 0 0 #E2DDDD;	*/
+    display: block;
+    padding: 10px;
+    color: #666666;
+}
+
+.rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-content {
+	background-color: #FFFFFF;
+    border: 1px solid #666666;
+    height: auto;
+}
+
+	.rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-bd ul {
+		color: #666666;
+    	margin: 1em 0;
+	    padding: 0 1em;
+	}
+
+	.rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-bd ul li {
+		color: #666666;
+		padding: 3px 0;
+	}
+	
+	.rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-bd ul li.yui-ac-highlight {
+		cursor: pointer;
+		background-color: #EEEEEE;
+	}
+
+	.rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-bd ul li span.query {
+	    font-weight: bold;
+	}
+
+	.rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-bd ul li span.isbn {
+		color: #999999;
+	    font-size: 11px;
+	}
+	
+	.rn_ACProductSelection .rn_ProductSelectionContainer .yui-ac-ft {
+		cursor: pointer;
+		padding: 2px 0 2px 10px;
+	}
+	
+.rn_ACProductSelection .rn_ProductSelectionList {
+	color: #666666;
+	padding: 10px 10px 0;
+	width: 79%;
+}
+
+	.rn_ACProductSelection .rn_ProductSelectionList .rn_Label {
+		font-weight: normal;
+	}
+		
+	.rn_ACProductSelection .rn_ProductSelectionList ul li {
+		border-top: 1px solid #666666;
+		clear: both;
+		min-height: 25px;
+		padding: 5px 0;
+	}
+	
+	.rn_ACProductSelection .rn_ProductSelectionList ul li span {
+		float: left;
+		max-width: 67%;
+		font-size: 11px;
+	}
+	
+	.rn_ACProductSelection .rn_ProductSelectionList ul li button {
+		float: right;
+	    font: bold 12px/1.2 Helvetica,sans-serif;
+	}
+
+#rn_RequiredInput div.rn_SelectionInput {
+	display: block;
+	position: inherit;
+}
+
+	#rn_RequiredInput div.rn_SelectionInput label, #rn_RequiredInput div.rn_SelectionInput input, .rn_Label, #rn_RequiredInput .rn_RadioInput {
+		display: inline;
+	}
+	
+	#rn_RequiredInput div.rn_SelectionInput.rn_Hidden {
+    display: none;
+}
+
+	#rn_RequiredInput div.rn_SelectionInput label.rn_Label {
+		display: block;
+	}
+	
+	#rn_RequiredInput div.rn_SelectionInput input {
+		margin-right: 10px;
+	}
+		
+.rn_Elsevier #rn_InfoBox .rn_TextInput .rn_Text {
+	width: 93%;
+}
+
+.rn_Elsevier .rn_TextInput .rn_TextArea {
+	width: 100%;
+/*	color: #666666;	*/
+}
+
+#rn_QuestionSubmit .rn_buttonwrap {
+	margin-bottom: 25px;
+}
+
+	#rn_QuestionSubmit .rn_FormSubmit {
+		float: right;
+	}
+	
+	#rn_QuestionSubmit .rn_FormSubmit button, #rn_QuestionSubmit .rn_FormSubmit input {
+		margin-left: 6px;
+		margin-right: 0;
+	    height: 26px;
+	    min-width: 98px;
+	}
+	
+	#rn_QuestionSubmit .rn_FormSubmit button {
+		background-color: #535353;
+		width: 150px;
+	}
+	
+	#rn_QuestionSubmit .rn_FormSubmit button:hover {
+		background-color: #165BB3;
+	}
+	
+	#rn_QuestionSubmit .rn_FormSubmit span {
+	/*	background: url("../images/layout/bg_diagonal.png") repeat scroll 0 0 #E2DDDD;	*/
+	    margin: 2px;
+	    padding: 10px;
+	}
+	
+	#rn_MainColumn #rn_AlandAn.rn_Message {
+	    background: repeat scroll 0 0  FFFFFF;
+	    width: 520px;
+	    padding: 25px 20px;
+	    margin: 10px 0 0 20px;
+	}
+	
+	#rn_MainColumn #rn_AlandAn.rn_Message .rn_Headline {
+	    border-bottom: 1px solid #333333;
+	    color: #333333;
+	    font-size: 15px;
+	    font-weight: bold;
+	    margin-bottom: 10px;
+	}
+	
+	#rn_MainColumn #rn_PageContent.rn_Live .ChatForm {
+		margin: 10px 0 0;
+	}
+	
+/******************************
+    06. Dialog
+******************************/
+
+#rn_QuestionSubmit .rn_SmartAssistantDialog .rn_Prompt {
+    color: #333333;
+}
+
+#rn_QuestionSubmit .rn_SmartAssistantDialog .rn_Heading {
+    color: #F00;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+#rn_QuestionSubmit .rn_SmartAssistantDialog .rn_List li.rn_ExpandAnswer {
+    list-style: none outside url("../images/layout/bullet_inactive.png");
+}
+
+#rn_QuestionSubmit .rn_SmartAssistantDialog .rn_List li.rn_ExpandedAnswer {
+    list-style: none outside url("../images/layout/bullet_active.png");
+}
+
+#rn_QuestionSubmit .rn_SmartAssistantDialog .rn_List li.rn_ExpandedAnswer a,
+#rn_QuestionSubmit .rn_SmartAssistantDialog .rn_List li span.rn_AnswerSummary, #rn_QuestionSubmit .rn_SmartAssistantDialog .rn_List li span.rn_AnswerSolution {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/******************************
+    06. Answers
+******************************/
+	
+#rn_MainColumn .rn_Multiline2 ol {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#rn_MainColumn .rn_Multiline2 li {
+    margin-bottom: 0px;
+}
+
+#rn_MainColumn .rn_Multiline2 li span.rn_Element1 {
+    font-size: 14px;
+    display: block;
+}
+
+#rn_MainColumn .rn_Multiline2 li span.rn_Element2 {
+    font-size: 12px;
+    display: none;
+}
+
+#rn_MainColumn .rn_Multiline2 li span.rn_Element3 {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #333333;	/* #666666; */
+}
+
+#rn_MainColumn .rn_Multiline2 li span.rn_ElementsHeader, #rn_MainColumn .rn_Multiline2 li span.rn_ElementsData {
+    display: none;
+}
+
+#rn_MainColumn .rn_Paginator {
+    float: none;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 0 0;
+}
+
+#rn_MainColumn .rn_Paginator a, #rn_MainColumn .rn_Paginator .rn_CurrentPage {
+    line-height: 100%;
+    margin-right: 2px;
+    padding: 1px 4px;
+}
+
+#rn_MainColumn .rn_Paginator a {
+    border: 0px solid #DDDDDD;
+    text-decoration: none;
+}
+
+#rn_MainColumn .rn_Paginator a.rn_Back {
+    background: url("../images/icons/iframe_rnarrownavbuttonsprite.png") no-repeat scroll left -45px transparent;
+    padding-left: 23px;
+}
+
+#rn_MainColumn .rn_Paginator span.rn_Back {
+    background: url("../images/icons/iframe_rnarrownavbuttonsprite.png") no-repeat scroll left -66px transparent;
+    padding-left: 23px;
+}
+
+#rn_MainColumn .rn_Paginator a.rn_Forward {
+    background: url("../images/icons/iframe_rnarrownavbuttonsprite.png") no-repeat scroll right -3px transparent;
+    padding-right: 23px;
+}
+
+#rn_MainColumn .rn_Paginator span.rn_Forward {
+    background: url("../images/icons/iframe_rnarrownavbuttonsprite.png") no-repeat scroll right -24px transparent;
+    padding-right: 23px;
+}
+
+.rn_Elsevier #rn_MainColumn .rn_Paginator span a {
+    background-color: #999999;	/* #535353; */
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#rn_MainColumn .rn_Paginator span a:hover {
+    background-color: #165BB3;
+}
+
+#rn_MainColumn .rn_Paginator span .rn_CurrentPage {
+    background-color: #434C57;	/* #192432; */
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#rn_MainColumn .rn_Paginator .rn_NoMorePages {
+	color: #999999;
+    margin-right: 2px;
+    padding: 1px 4px;
+}
+
+#rn_MainColumn .rn_ResultInfo2 .rn_Suggestion, #rn_MainColumn .rn_ResultInfo2 .rn_Spell, #rn_MainColumn .rn_ResultInfo2 .rn_Results {
+	color: #333333;	/* #999999; */
+    float: none;
+    text-align: center;
+    font-style: normal;
+    padding: 10px 0 0;
+}
+
+#rn_MainColumn .rn_ResultInfo2 .rn_Suggestion a, #rn_MainColumn .rn_ResultInfo2 .rn_Spell a, #rn_MainColumn .rn_ResultInfo2 .rn_Results a {
+	font-style: normal;
+}
+
+#rn_MainColumn .rn_ResultInfo2 .rn_NoResults {
+	background: repeat scroll 0 0  FFFFFF;
+	color: #192432;
+	float: none;
+	text-align: center;
+	width: 300px;
+}
+
+
+#rn_MainColumn #rn_PageTitle h3#rn_Summary {
+	border-bottom: 1px solid #CCCCCC;
+	font-weight: normal;	/* bold;	*/
+    padding: 5px 0;
+}
+
+#rn_AnswerText, #rn_AnswerText div, #rn_AnswerText p, #rn_AnswerText span, #rn_AnswerText  {
+	line-height: 15px;
+}
+
+#rn_AnswerText, #rn_FileAttach {
+	padding: 0 0 10px;
+}
+
+ #rn_AnswerText ol li{
+	 list-style: decimal;
+	margin: 0 0 10px 20px;
+}
+
+
+#rn_AnswerText ul li{
+	list-style: disc outside none;
+	margin: 0 0 10px 20px;
+}  
+
+#rn_AnswerText li {
+	padding-left:  7px;
+}
+
+#rn_AnswerFeedback .rn_AnswerFeedback2 {
+	width: 370px;
+	float: left;
+}
+	
+	.rn_Elsevier #rn_AnswerFeedback .rn_AnswerFeedback2 div.widgetHeader, #rn_AnswerFeedback .RatingButtons {
+		height: auto;
+		margin-bottom: 12px;
+	}
+	
+	.rn_Elsevier #rn_AnswerFeedback .rn_AnswerFeedback2 div.widgetHeader {
+		float: left;
+	}
+	
+	#rn_AnswerFeedback .rn_AnswerFeedback2 div.widgetHeaderText {
+		font-family: Helvetica, sans-serif;
+	    font-size: 14px;
+	    font-style: normal;
+	    line-height: 1.5;
+	    text-align: left;
+	    text-decoration: none;
+	    color: #192432;
+	}
+	
+	#rn_AnswerFeedback .rn_AnswerFeedback2 button {
+	    width: 30px;
+	    height: 32px;
+	    padding: 2px;
+	    margin-right: 5px;
+	    margin-left: 15px;
+	}
+	
+	#rn_AnswerFeedback .RatingButtons {
+	/*	margin-right: 22px;	*/
+		float: right;
+	}
+	
+	#rn_AnswerFeedback button.AnswerRatingGood {
+		background: url("../images/icons/iframe_rnanswerratingbuttonsprite.png") no-repeat scroll -2px -7px transparent;
+	}
+	
+	#rn_AnswerFeedback button.AnswerRatingGood:hover {
+		background: url(../images/icons/iframe_rnanswerratingbuttonsprite.png) no-repeat scroll -2px -50px transparent;
+	}
+	
+	#rn_AnswerFeedback button.AnswerRatingBad {
+		background: url(../images/icons/iframe_rnanswerratingbuttonsprite.png) no-repeat scroll -38px -8px transparent;
+	}
+	
+	#rn_AnswerFeedback button.AnswerRatingBad:hover {
+		background: url(../images/icons/iframe_rnanswerratingbuttonsprite.png) no-repeat scroll -38px -51px transparent;
+	}
+		
+	#rn_AnswerFeedback div.rn_ThanksLabel {
+		margin: 10px 0 0;
+	}
+	
+	#rn_AnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form {
+	    background: url("../images/layout/bg_diagonal.png") repeat scroll 0 0 #F0F0F0;
+	    clear: both;
+	    padding: 15px 20px 10px;
+	    margin-bottom: 20px;
+	}
+	
+	#rn_AnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form .rn_dlg_subtitle {
+		color: #000000;	/* #FF0000;	*/
+		font-weight: bold;
+	}
+	
+	#rn_AnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form ul {
+		padding: 10px 0;
+	}
+	
+	#rn_PageContent .rn_AnswerFeedback2 .rn_AnswerFeedback2Form textarea.Field {
+		width: 100%;
+		border: 1px solid #BBBBBB;
+	}
+	
+	#rn_AnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form input[type="button"] {
+		background-color: #192432;
+		color: #FFFFFF;
+		font-family: Helvetica, sans-serif;
+	    font-size: 12px;;
+	    font-style: normal;
+    	font-weight: bold;
+    	border: 0 solid #666666;
+    	-moz-appearance: none;
+	    -moz-box-sizing: none;
+	    float: right;
+	    margin: 10px 0;
+    	padding: 4px 10px;
+	}
+	
+	#rn_AnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form input[type="button"]:hover {
+		background-color: #165BB3;
+	}
+	
+#rn_AnswerFeedback div.errormessage {
+    float: right;
+    width: 310px;
+    margin-top: 57px;
+}
+	
+#rn_AnswerFeedback, #rn_PageContent div.rn_RelatedAnswers2, #rn_PageContent div.rn_PreviousAnswers2 {
+	padding: 35px 0 10px;
+	border-top: 1px solid #CCCCCC;
+}
+
+#rn_PageContent div.rn_RelatedAnswers2 ul, #rn_PageContent div.rn_PreviousAnswers2 ul {
+	margin: 10px 0 0;
+}
+
+#rn_PageContent div.rn_RelatedAnswers2 ul li, #rn_PageContent div.rn_PreviousAnswers2 ul li {
+	list-style: none outside url("../images/layout/bullet_inactive.png");
+    padding-top: 10px;
+    margin-left: 25px;
+}
+
+
+/*****************
+
+Answer feedback with no options presented styling
+
+**************************/
+
+#rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 {
+	width: 370px;
+	float: left;
+}
+	
+	.rn_Elsevier #rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 div.widgetHeader, #rn_AnswerFeedback .RatingButtons {
+		height: auto;
+		margin-bottom: 12px;
+	}
+	
+	.rn_Elsevier #rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 div.widgetHeader {
+		float: left;
+	}
+	
+	#rnNoOption_AnswerFeedback .rn_AnswerFeedback2 div.widgetHeaderText {
+		font-family: Helvetica, sans-serif;
+	    font-size: 14px;
+	    font-style: normal;
+	    line-height: 1.5;
+	    text-align: left;
+	    text-decoration: none;
+	    color: #192432;
+	}
+	
+	#rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 button {
+	    width: 30px;
+	    height: 32px;
+	    padding: 2px;
+	    margin-right: 5px;
+	    margin-left: 15px;
+	}
+	
+	#rn_NoOptionAnswerFeedback .RatingButtons {
+	/*	margin-right: 22px;	*/
+		float: right;
+	}
+	
+	#rn_NoOptionAnswerFeedback button.AnswerRatingGood {
+		background: url("../images/icons/iframe_rnanswerratingbuttonsprite.png") no-repeat scroll -2px -7px transparent;
+	}
+	
+	#rn_NoOptionAnswerFeedback button.AnswerRatingGood:hover {
+		background: url(../images/icons/iframe_rnanswerratingbuttonsprite.png) no-repeat scroll -2px -50px transparent;
+	}
+	
+	#rn_NoOptionAnswerFeedback button.AnswerRatingBad {
+		background: url(../images/icons/iframe_rnanswerratingbuttonsprite.png) no-repeat scroll -38px -8px transparent;
+	}
+	
+	#rn_NoOptionAnswerFeedback button.AnswerRatingBad:hover {
+		background: url(../images/icons/iframe_rnanswerratingbuttonsprite.png) no-repeat scroll -38px -51px transparent;
+	}
+		
+	#rn_NoOptionAnswerFeedback div.rn_ThanksLabel {
+		margin: 10px 0 0;
+	}
+	
+	#rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form {
+	    background: url("../images/layout/bg_diagonal.png") repeat scroll 0 0 #F0F0F0;
+	    clear: both;
+	    padding: 15px 20px 10px;
+	    margin-bottom: 20px;
+	}
+	
+	#rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form .rn_dlg_subtitle {
+		color: #000000;	/* #FF0000;	*/
+		font-weight: bold;
+	}
+	
+	#rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form ul {
+		padding: 10px 0;
+	}
+	
+	#rn_NoOptionPageContent .rn_AnswerFeedback2 .rn_AnswerFeedback2Form textarea.Field {
+		width: 100%;
+		border: 1px solid #BBBBBB;
+	}
+	
+	#rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form input[type="button"] {
+		background-color: #192432;
+		color: #FFFFFF;
+		font-family: Helvetica, sans-serif;
+	    font-size: 12px;;
+	    font-style: normal;
+    	font-weight: bold;
+    	border: 0 solid #666666;
+    	-moz-appearance: none;
+	    -moz-box-sizing: none;
+	    float: right;
+	    margin: 10px 0;
+    	padding: 4px 10px;
+	}
+	
+	#rn_NoOptionAnswerFeedback .rn_AnswerFeedback2 .rn_AnswerFeedback2Form input[type="button"]:hover {
+		background-color: #165BB3;
+	}
+	
+#rn_NoOptionAnswerFeedback div.errormessage {
+    float: right;
+    width: 310px;
+    margin-top: 57px;
+}
+	
+#rn_NoOptionAnswerFeedback, #rn_PageContent div.rn_RelatedAnswers2, #rn_PageContent div.rn_PreviousAnswers2 {
+	padding: 35px 0 10px;
+	border-top: 1px solid #CCCCCC;
+}
+
+#rn_NoOptionAnswerFeedback {
+	display:none;
+}
+
+
+/********************
+	pages
+		ask.php
+*******************/
+
+#rn_Product .rn_ProductCategoryInput .NodeLevel0 {
+	display: none;
+	background-color: #FFFFFF;
+}
+
+.rn_ProductCategoryInput .rn_NoValueNode {
+	display: none;
+}
+
+#rn_Optionaladdress{
+	display:none;
+	}
+
+/********************
+	chat
+*******************/
+/**********************************
+Index:
+    13. Chat Related
+**********************************/
+#rn_ChatDialogHeader {
+	background: url("../images/lg_logo.gif") no-repeat scroll 20px center #FFFFFF;
+    min-height: 72px;
+    min-width: 100%;
+}
+
+#rn_ChatDialogContainer .rn_ChatServerConnect, #rn_ChatDialogContainer .rn_ChatEngagementStatus, #rn_ChatDialogContainer .rn_ChatQueueWaitTimeContainer {
+	background: repeat scroll 0 0  FFFFFF;
+}
+
+#rn_ChatDialogContainer .rn_ChatAgentStatus {
+	background: url("../themes/standard/images/layout/whitepixel.png") repeat-x scroll 0 0 #F0F0F0;
+}
+
+#rn_ChatDialogContainer .rn_ChatPostMessage {
+    clear: both;
+}
+
+/*******************************************
+    13. Chat Related
+*******************************************/
+
+#rn_ChatContainer {
+    height:100%;
+    margin:0px auto;
+    overflow:visible;
+    text-align:left;
+}
+
+#rn_ChatDialogContainer {
+    background-color:#EBEFF5;
+    border:1px solid #555555;
+    overflow:hidden;
+    position:relative;
+    min-height:440px;
+    height:auto;
+}
+/* IE6 Hack */
+* html #rn_ChatDialogContainer {
+    overflow-y:auto;
+    height:445px;
+}
+/* END IE6 Hack */
+
+/*FireFox2*/
+#rn_ChatDialogContainer[id=RN_CHATDIALOGCONTAINER] {
+    height:445px;
+    overflow-y:auto;
+}
+
+#rn_ChatDialogHeaderContainer {
+    height:30px;
+    overflow:visible;
+    padding:4px;
+    vertical-align:middle;
+}
+
+#rn_ChatDialogTitle {
+    margin-top: 8px;
+}
+
+#rn_ChatDialogHeaderButtonContainer button{
+    background: transparent none repeat scroll 0 0;
+    border-color: transparent;
+    color: #555555;
+    margin-right: .25em;
+    -moz-box-shadow: 0px 0px 0px transparent;
+    -webkit-box-shadow: 0px 0px 0px transparent;
+    padding: 2px;
+}
+
+#rn_ChatDialogHeaderButtonContainer button:hover,
+#rn_ChatDialogHeaderButtonContainer button:focus{
+    background-color: #F8F8F8;
+    border-color: #CCCCCC #555555 #555555 #CCCCCC;
+    color: #000000;
+}
+
+#rn_InChatButtonContainer {
+    overflow: visible;
+}
+
+#rn_PreChatButtonContainer{
+    overflow: visible;
+}
+
+#rn_ChatQueueSearchContainer {
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+#rn_ChatQueueSearchContainer  .search-button{
+	margin-top:10px;
+}
+
+#rn_ChatLogo {
+    height:100px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width:135px;
+}
+
+@media print
+{
+    #rn_ChatDialogHeaderContainer,
+    #rn_InChatButtonContainer,
+    #rn_PreChatButtonContainer,
+    #rn_ChatQueueSearchContainer,
+    #rn_ChatLogo {
+        display:none;
+    }
+
+    #rn_ChatContainer {
+        border:0;
+    }
+}
+
+/* *** Chat File Attachment dialog specific *** */
+
+.yui-skin-sam .mask {
+    background-color: #000000;
+    opacity: 0.25;
+}
+
+.mask {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.yui-skin-sam .yui-simple-dialog {
+    padding: 0 1px;
+}
+
+.rn_Dialog, .yui-simple-dialog {
+	background-color: #F0F0F0;
+    position: absolute;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.yui-skin-sam .rn_Dialog {
+    border-color: #808080;
+    border-style: solid;
+    border-width: 1px;
+    left: 0;
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+
+.rn_Dialog {
+    position: relative;
+    overflow: visible;
+}
+
+.rn_Elsevier .rn_ChatFileAttachContent input {
+    width: 100%;
+}
+
+.yui-skin-sam .rn_Dialog .hd {
+    background: url("../../../assets/skins/sam/sprite.png") repeat-x scroll 0 -200px transparent;
+    color: #000000;
+    font-size: 93%;
+    font-weight: bold;
+    line-height: 2;
+    padding: 0 10px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.yui-skin-sam .rn_Dialog .hd, .yui-skin-sam .rn_Dialog .bd, .yui-skin-sam .rn_Dialog .ft {
+    border-color: #808080;
+    border-style: solid;
+    border-width: 0 1px;
+    margin: 0 -1px;
+}
+
+.yui-skin-sam .rn_Dialog .bd {
+    padding: 10px;
+}
+
+.yui-skin-sam .rn_Dialog .bd, .yui-skin-sam .rn_Dialog .ft {
+    background-color: #F2F2F2;
+}
+
+.yui-skin-sam .yui-simple-dialog .ft {
+    border-top: medium none;
+    font-size: 100%;
+    padding: 0 10px 10px;
+}
+
+.yui-skin-sam .rn_Dialog .ft {
+    border-top: 1px solid #808080;
+    font-size: 77%;
+    padding: 5px 10px;
+}
+
+.yui-skin-sam .rn_Dialog a {
+	display: none;
+}
+
+#rn_NHP{
+		 display:none;
+	 }
+	 
+#rn_accountid{
+	display:none;
+}
+
+#rn_browser_media{
+	display:none;
+}
+
+#rn_browser_call{
+	display:none;
+}
+
+#rn_OS_ver{
+	display:none;
+}
+
+#hiddentechinfo{
+	display:none;
+}
+
+#browserip{
+	display:none;
+}
+
+#rn_hotbar{
+	display:inline;
+}
+
+.rn_hotbutton{
+	background: url("../../../../cdn.elsevier.com/assets/image/0012/111081/tabbed-ul-bg.png@v=0.1.1") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+		width:auto;
+		height: 30px;
+		border-radius: 7px 7px 7px 7px;
+		float:left;
+		border: 1px solid #0CF;
+		font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1.5;
+        text-align: center;
+        color: #333333;
+		display:none;
+		
+}
+
+
+#rn_Bigcolumn	{
+	width:100%
+}
+	
+.rn_Column{
+	width: 20%;
+	float:left;
+}
+
+#rn_LeftColumn{
+	display:none;
+}
+
+
+ #rn_MidColumn{
+	width: 100%;
+	margin-top: 10px;
+} 
+
+#rn_RightColumn{
+	display:none;
+}
+
+#rn_RightColumn h2{
+	font-size:14px;
+}
+
+#rn_ps_custtype{
+	display: none;
+}
+
+#rn_pws{
+	display: none;
+	
+}
+
+#rn_conference{
+	display: none;
+	
+}
+
+#rn_warning{
+	font-size:16px;
+	display:none;
+}
+
+
+#JAT_Footer{
+ 	margin-left: 15px;
+	margin-top: 5px;
+}
+
+#rn_DisplaySearchFilters_21_Filter_0{
+	display:none;
+}
+
+.rn_DisplaySearchFilters {
+	display:none;
+    padding:16px 6px 0;
+	clear:none;
+}
+
+#rn_SearchControlsNonCat{
+	display:none;
+}
+
+ #rn_largelogo {
+	 display: inline-block;
+ }
+ 
+ #rn_backlink2{
+	 display: none;
+ }

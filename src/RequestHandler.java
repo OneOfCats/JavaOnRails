@@ -8,6 +8,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import Helpers.CommonHelpers;
 
 import Controllers.*;
 
@@ -38,6 +39,10 @@ public class RequestHandler implements Runnable {
     public void run() {
         try {
             String headers = readInputHeaders();
+            if(headers.split(" ")[1].indexOf('.') != -1) {
+            	responseFile(headers.split(" ")[1].replaceAll("^/+", "").replaceAll("/+$", ""));
+            	return;
+            }
             String route = findProperRoute(headers);
             if (route.equals("not found")){
             	writeResponse404();
@@ -45,8 +50,6 @@ public class RequestHandler implements Runnable {
             }
             String controller = route.split("=>")[2].split("#")[0];
             String action = route.split("=>")[2].split("#")[1];
-            
-            if(action.indexOf('.') != -1) return;
             
             Class controllerClass = Class.forName("Controllers." + controller + "Controller");
             Constructor controllerConstructor = controllerClass.getConstructor(String.class, String.class);
@@ -70,6 +73,31 @@ public class RequestHandler implements Runnable {
             }
         }
         System.err.println("Client processing finished");
+    }
+    
+    private void responseFile(String filepath) throws Throwable {
+    	String[] address = filepath.split("/");
+    	String[] filename = address[address.length - 1].split("\\.");
+    	String format = filename[filename.length - 1];
+    	String response = "";
+    	String file = CommonHelpers.readFile(filepath, Charset.forName("UTF-8"));
+    	switch(format) {
+    	case "css":
+    		response = "HTTP/1.1 200 OK\r\n" +
+                    "Content-Type: text/css\r\n" +
+                    "Content-Length: " + file.length() + "; charset=utf-8\r\n" +
+                    "Connection: close\r\n\r\n";
+    		break;
+		case "js":
+			response = "HTTP/1.1 200 OK\r\n" +
+	                "Content-Type: text/javascript\r\n" +
+                    "Content-Length: " + file.length() + "; charset=utf-8\r\n" +
+	                "Connection: close\r\n\r\n";
+    		break;
+		}
+    	response += file;
+    	os.write(response.getBytes());
+    	os.flush();
     }
     
     /**
