@@ -1,4 +1,8 @@
-﻿<div class="row">
+﻿<link rel="stylesheet" type="text/css" href="/src/assets/css/scopusmasterlayout.css">
+
+
+
+<div class="row">
 <div class="col-md-12">
 <header>
 <h1 class="documentHeader"> Document search
@@ -36,7 +40,7 @@
 </div>
 </div>
 <div class="formContentSection">
-<form id="searchResultsForm" name="SearchResultsForm" action="/project/page01" method="post">
+<form id="searchResultsForm" name="SearchResultsForm" action="/project/page05" method="post">
 <input type="hidden" id="numberOfFields" name="numberOfFields" value="0">    
 <input id="src" name="src" type="hidden" value="s">
 <input id="clickedLink" name="clickedLink" type="hidden" value="">
@@ -47,9 +51,9 @@
 <div class="col-md-12">
 <ul id="internalTabs" class="nav nav-pills">
 <li class="active"><a href="javascript:void(0)"> Documents</a></li>
-<li><a href="javascript:basicFormSubmit('author');"> Authors</a></li>
-<li><a href="javascript:basicFormSubmit('affiliation');"> Affiliations</a></li>
-<li><a href="javascript:basicFormSubmit('advanced');">Advanced</a></li>
+<li><a href="/project/page02"> Authors</a></li>
+<li><a href="/project/page03"> Affiliations</a></li>
+<li><a href="/project/page04">Advanced</a></li>
 <li class="helperLink">
 <a href="../standard/help.uri@topic=2370" target="globalHelp" onclick="return openGlobalhelp('../standard/help.uri@topic=2370','globalHelp',760,570,0)" title="Search tips (Opens in a new window)">
 <span class="btnText">Search tips</span>
@@ -80,6 +84,7 @@
 <script>if(typeof prs != "undefined"){prs.rt("pcr");}</script>
 </div>
 </div>
+<!--
 <div class="col-md-6">
 <label class="sr-only" for="searchTypeChoices">Search Field Type</label>
 <select id="field1" name="field1" class="largeSelect" style="display: none;">
@@ -91,6 +96,7 @@
 </button>
 <br>
 </div>
+-->
 </div>
 <div id="addTerms" class="row formRow" aria-live="polite" aria-atomic="true">
 </div>
@@ -221,3 +227,13 @@ jQuery('.ariaHidden').focus();
 <div class="clear"></div>
 </div>
 </div>
+<script src="/src/assets/js/jawr_loader.js"></script>
+<script src="/src/assets/js/masterjquery.js"></script>
+<script src="/src/assets/js/remoteaccmsg.js"></script>
+<script src="/src/assets/js/basicsearchtop.js"></script>
+
+<script src="/src/assets/js/sitecatalysttop.js"></script>
+<script src="/src/assets/js/scopusmasterjs.js"></script>
+
+<script src="/src/assets/js/basicsearchbottom.js"></script>
+

@@ -1,4 +1,6 @@
-﻿<div class="row">
+﻿<link rel="stylesheet" type="text/css" href="/src/assets/css/scopusmasterlayout.css">
+
+<div class="row">
 	<div class="col-md-12">
 		<header>
 			<h1 class="documentHeader"> Advanced search
@@ -23,7 +25,7 @@
 					</div>
 					<div class="contentSection">
 						<div class="formContentSection">
-						<form id="advSearchForm" name="AdvancedValidatedSearchForm" action="/project/page04" method="post">
+						<form id="advSearchForm" name="AdvancedValidatedSearchForm" action="/project/project/page04" method="post">
 								<input type="hidden" name="origin" value="searchadvanced">
 								<input type="hidden" name="authorSelectionPageURL" value="/search/form/selectionpage.uri?renderType=authorRenderType">
 								<input type="hidden" name="affilSelectionPageURL" value="/search/form/selectionpage.uri?renderType=affilRenderType">
@@ -36,10 +38,10 @@
 								<div class="row wrapper">
 									<div class="col-md-12">
 										<ul id="internalTabs" class="nav nav-pills">
-											<li><a href="javascript:advancedFormSubmit('basic');">Documents</a></li>
-											<li><a href="javascript:advancedFormSubmit('author');">Authors</a></li>
-											<li><a href="javascript:advancedFormSubmit('affiliation');">Affiliations</a></li>
-											<li class="active"><a href="javascript:void(0);">Advanced</a></li>
+											<li><a href="/project/page01">Documents</a></li>
+											<li><a href="/project/page02">Authors</a></li>
+											<li><a href="/project/page03">Affiliations</a></li>
+											<li class="active"><a href="/project/page04">Advanced</a></li>
 											<li class="helperLink">
 												<a href="../standard/help.uri@topic=2370" target="globalHelp" onclick="return openGlobalhelp('../standard/help.uri@topic=2370','globalHelp',760,570,0)" title="Search tips (Opens in a new window)">
 													<span class="btnText">Search tips</span>
@@ -218,127 +220,11 @@
 						<div class="clear"></div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12 footer">
-						<footer>
-							<a href="#" name="skiptofooter" id="skiptofooter"></a>
-							<div class="row footerLinks">
-								<div class="col-md-3">
-									<header>
-										<h3>About Scopus</h3>
-									</header>
-									<ul class="list-unstyled">
-										<li>
-											<a target="_blank" href="../../https@www.elsevier.com/online-tools/scopus" title="Learn more about Scopus (opens in a new window)">What is Scopus</a>
-										</li>
-										<li>
-											<a target="_blank" href="../../https@www.elsevier.com/online-tools/scopus/content-overview/default.htm" title="Learn more about Scopus' content coverage (opens in a new window)">Content coverage</a>
-										</li>
-										<li>
-											<a target="_blank" href="../../https@blog.scopus.com/default.htm" title="Read the Scopus Blog (opens in a new window)">Scopus blog</a>
-										</li>
-										<li>
-											<a target="_blank" href="../../https@dev.elsevier.com/default.htm" title="Learn more about Scopus API's (opens in a new window)">Scopus API</a>
-										</li>
-										<li>
-											<a target="_blank" href="../../https@www.elsevier.com/legal/privacy-approach" title="View privacy matters page (opens in a new window)">Privacy matters</a>
-										</li>
-									</ul>
-								</div>
-								<div class="col-md-3">
-									<header>
-										<h3>Language</h3>
-									</header>
-									<ul class="list-unstyled">
-										<li lang="ja">
-											<a lang="ja" hreflang="ja" href="/personalization/switch/Japanese.uri?origin=&amp;zone=footer&amp;locale=ja_JP" target="_top" title="日本語版を表示する">
-												日本語に切り替える
-											</a>
-										</li>
-										<li lang="zh-Hans">
-											<a lang="zh-Hans" hreflang="zh-Hans" href="/personalization/switch/Chinese.uri?origin=&amp;zone=footer&amp;locale=zh_CN" target="_top" title="查看简体中文版本">
-												切换到简体中文
-											</a>
-										</li>
-										<li lang="zh-Hant">
-											<a lang="zh-Hant" hreflang="zh-Hant" href="/personalization/switch/Chinese.uri?origin=&amp;zone=footer&amp;locale=zh_TW" target="_top" title="查看繁體中文版本">
-												切換到繁體中文
-											</a>
-										</li>
-									</ul>
-								</div>
-								<div class="col-md-6">
-									<header>
-										<h3>Customer Service</h3>
-									</header>
-									<ul class="list-unstyled">
-										<li>
-											<a target="_blank" title="View Scopus help files (opens in a new window)" href="../standard/contactus.uri@pageorigin=footer">Help</a>
-										</li>
-										<li> <a href="../redirect/linking.uri@targeturl=https_253a_252f_252fhelp.elsevier.com_252fapp_252fchat_252fchat_launch_oscs_252fp_252f8150&amp;loca086466d3ff" target="_blank" onclick="return openBareWindow('../redirect/linking.uri@targeturl=https_253a_252f_252fhelp.elsevier.com_252fapp_252fchat_252fchat_launch_oscs_252fp_252f8150&amp;loca086466d3ff', '_blank');" title="Live Chat(opens in a new window)">Live Chat</a></li> 
-										<li>
-											<a target="_blank" title="Send us an email (opens in a new window)" href="../standard/contactform.uri@pageorigin=footer">Contact us</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="row footerCopyright">
-								<div class="col-md-2">
-									<a id="elsevierLogo" target="_blank" href="../../https@www.elsevier.com/default.htm" title="Go to the Elsevier site (opens in a new window)">
-										<img src="../static/images/logo_elsevier.svg.xml" alt="Elsevier">
-									</a>
-								</div>
-								<div class="col-md-7">
-									<ul class="list-unstyled list-inline">
-										<li>
-											<a target="_blank" href="../../https@www.elsevier.com/locate/termsandconditions" title="View the terms and conditions of Elsevier (opens in a new window)">Terms and conditions</a>
-										</li>
-										<li>
-											<a target="_blank" href="../../https@www.elsevier.com/locate/privacypolicy" title="View the privacy policy of Elsevier (opens in a new window)">Privacy policy</a>
-										</li>
-									</ul>
-									<p>
-										Copyright © 2016
-										<a target="_blank" href="../../https@www.elsevier.com/default.htm" title="Go to the Elsevier site (opens in a new window)">Elsevier B.V</a>. All rights reserved. Scopus® is a registered trademark of Elsevier B.V.
-										<br>
-										Cookies are set by this site. To decline them or learn more, visit our <a target="_blank" href="../../https@help.elsevier.com/app/answers/detail/a_id/2964/p/8150/default.htm" title="See Cookie details (opens in a new window)">Cookies page</a>.
-									</p>
-								</div>
-								<div class="col-md-3">
-									<a id="relexLogo" href="../../www.relx.com/default.htm" title="Go to RELX Group Homepage (Opens in a new window)" target="_blank">
-										<img src="../static/images/relexlogo.svg.xml" alt="RELX Group">
-									</a>
-								</div>
-							</div>
-						</footer>
-						<script type="text/javascript">
-//client performance stats call.
-var originVal = "searchadvanced";
-var SDM = new Object;
-SDM.si = new Object;
-SDM.si.sds = "f44607d0df9f9d3f22b52a6c0c73da1413bdd56a94400d1a5fccab0fc3783991ab1335dd8dee4be763ca9d11473d425b";
-SDM.tid = "AB427695AFC87AA5B2CF806100D768B3.wsnAw8kcdt7IPYLO0V48gA:21";
-SDM.ep = new Object();
-SDM.ep.prDevice = "../../https@pa.elsevier.com,https://els-eum.elsst.com";
-SDM.ep.urlPrefix = "../../www.scopus.com";
-SDM.ieVersion = "8";
-SDM.pru = "../../https@pa.elsevier.com,https://els-eum.elsst.com";
-SDM.pru = window.location.protocol
-+ SDM.pru.replace('http:', '').replace('https:', '');
-SDM.platform = "SC";
-SDM.pageType = "searchadvanced";
-SDM.pageTransKey = "Mon Dec 12 20:07:10 UTC 2016#i-04d4c23e6fa86fedc#AB427695AFC87AA5B2CF806100D768B3.wsnAw8kcdt7IPYLO0V48gA:21#FB00F401F9187186FAFC074B6BFBABD1.wsnAw8kcdt7IPYLO0V48gA#195.130.120.35";
-SDM.sds = "76d4b4fcc44f8511d12e98-5646f0527d6342a8";
-SDM.pf = new Object();
-SDM.cpc = "SC";
-</script>
-<script type="text/javascript" src="../../https@www.scopus.com\981549564\bundles\scopusmasterjs.js"></script>
-<script type="text/javascript" src="../../https@www.scopus.com\n198586279\bundles\advancedsearchbottom.js"></script>
-<script type="text/javascript">
-	jQuery(function(){
-		pageDataUtil.loadFooterPageDataObject();
-	});
-</script>
 </div>
-</div>
-</div>
+<script src="/src/assets/js/jawr_loader.js"></script>
+<script src="/src/assets/js/masterjquery.js"></script>
+<script src="/src/assets/js/remoteaccmsg.js"></script>
+<script src="/src/assets/js/basicsearchtop.js"></script>
+<script src="/src/assets/js/sitecatalysttop.js"></script>
+<script src="/src/assets/js/scopusmasterjs.js"></script>
+<script src="/src/assets/js/basicsearchbottom.js"></script>

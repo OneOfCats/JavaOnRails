@@ -1,0 +1,1 @@
+(function(){ window['optimizely'] = window['optimizely'] || []; window['optimizely'].push(['activateGeoDelayedExperiments', {"location":{"city":"KHARKIV","continent":"Europe","country":"UA","region":"63"},"ip":"77.120.162.179"}]); })();
