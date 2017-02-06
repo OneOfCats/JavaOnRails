@@ -80,24 +80,26 @@ public class RequestHandler implements Runnable {
     	String[] filename = address[address.length - 1].split("\\.");
     	String format = filename[filename.length - 1];
     	String response = "";
-    	String file = CommonHelpers.readFile(filepath, Charset.forName("UTF-8"));
-    	switch(format) {
-    	case "css":
-    		response = "HTTP/1.1 200 OK\r\n" +
-                    "Content-Type: text/css\r\n" +
-                    "Content-Length: " + file.length() + "; charset=utf-8\r\n" +
-                    "Connection: close\r\n\r\n";
-    		break;
-		case "js":
-			response = "HTTP/1.1 200 OK\r\n" +
-	                "Content-Type: text/javascript\r\n" +
-                    "Content-Length: " + file.length() + "; charset=utf-8\r\n" +
-	                "Connection: close\r\n\r\n";
-    		break;
-		}
+    	String file = "";
+    	try{
+    		file = CommonHelpers.readFile(filepath, Charset.forName("UTF-8"));
+    	} catch (Throwable e) {
+    		writeResponse404();
+    		return;
+    	}
+    	
+    	response = generateHeaders(format, file.length());
+    	
     	response += file;
     	os.write(response.getBytes());
     	os.flush();
+    }
+    
+    private String generateHeaders(String format, int fileLength) {
+    	return "HTTP/1.1 200 OK\r\n" +
+                "Content-Type: text/" + format + "\r\n" +
+                "Content-Length: " + fileLength + "; charset=utf-8\r\n" +
+                "Connection: close\r\n\r\n";
     }
     
     /**
