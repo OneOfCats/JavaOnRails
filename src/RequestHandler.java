@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import Helpers.CommonHelpers;
+import org.apache.commons.codec.binary.Base64;
 
 import Controllers.*;
 
@@ -81,25 +82,34 @@ public class RequestHandler implements Runnable {
     	String format = filename[filename.length - 1];
     	String response = "";
     	String file = "";
+    	byte[] fileEncoded;
     	try{
-    		file = CommonHelpers.readFile(filepath, Charset.forName("UTF-8"));
+    		if(format.equals("woff")) {
+    			fileEncoded = CommonHelpers.readEncodedFile(filepath);
+    			response = generateHeaders(format, fileEncoded.length) + new String(fileEncoded);
+        	} else {
+        		file = CommonHelpers.readFile(filepath, Charset.forName("UTF-8"));
+        		response = generateHeaders(format, file.length()) + file;
+        	}
     	} catch (Throwable e) {
     		writeResponse404();
     		return;
     	}
     	
-    	response = generateHeaders(format, file.length());
-    	
-    	response += file;
     	os.write(response.getBytes());
     	os.flush();
     }
     
     private String generateHeaders(String format, int fileLength) {
+    	String type = "text/" + format;
+    	switch(format) {
+    	case "woff":
+    		type = "application/font-woff" + ";charset=US-ASCII" + "\r\n" +
+    				"Access-Control-Allow-Origin: *";
+    		break;
+    	}
     	return "HTTP/1.1 200 OK\r\n" +
-                "Content-Type: text/" + format + "\r\n" +
-                "Content-Length: " + fileLength + "; charset=utf-8\r\n" +
-                "Connection: close\r\n\r\n";
+                "Content-Type: " + type + "\r\n\r\n";
     }
     
     /**

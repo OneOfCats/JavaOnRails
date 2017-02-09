@@ -47,4 +47,9 @@ public class CommonHelpers {
 		byte[] encoded = Files.readAllBytes(Paths.get(path));
 		return new String(encoded, encoding);
 	}
+	
+	public static byte[] readEncodedFile(String path) throws IOException {
+		byte[] encoded = Files.readAllBytes(Paths.get(path));
+		return encoded;
+	}
 }
